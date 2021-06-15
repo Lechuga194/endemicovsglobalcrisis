@@ -1,0 +1,25 @@
+.searchbox{
+    display: grid;
+    grid-template-columns: 5% 10% auto;
+    background-color: white;
+    border-radius: 0px 20px 3px;
+}
+
+.searchbox input{
+    /* height: calc(10vh - 20px); */
+    width: calc(10vw);
+    border: 0;
+    outline: 0;
+    background: transparent;
+    border-image: none;
+    outline-offset: -2px;
+    border-color: transparent;
+    outline-color: transparent;
+    box-shadow: none;
+}
+
+.searchbox img{
+    width: 80%;
+    align-self: center;
+    justify-self: center;
+}

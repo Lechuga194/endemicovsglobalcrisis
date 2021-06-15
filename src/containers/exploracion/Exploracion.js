@@ -5,6 +5,7 @@ import Salas from '../../components/salas/Salas'
 
 //estaticos
 import exploracion_img from '../../static/exploracion.jpg'
+import './exploracion.css'
 
 //TODO quitar y pedir a la BD
 let listacreadores = [
@@ -72,20 +73,21 @@ function Exploracion() {
     return(
         <div className="exploracion">
             <div className="busqueda">
-                <Searchbox onChangeSearch={onChangeSearch}/>
-                {currentPage == 'exploracion' ? 
-                    <button onClick={() => onButtonClick('salas')}>Buscar por salas</button> : 
-                    <button onClick={() => onButtonClick('exploracion')}>Buscar por nombre</button>
-                }
-            </div>
-            <div className="contenido">
-                <div>
+                <div className="nav">
+                    <Searchbox onChangeSearch={onChangeSearch}/>
+                    {currentPage == 'exploracion' ? 
+                        <a onClick={() => onButtonClick('salas')}>Buscar por salas</a> : 
+                        <a onClick={() => onButtonClick('exploracion')}>Buscar por nombre</a>
+                    }
+                </div>
+                <div className="listacreadores">
                     {currentPage == 'salas' ? <Salas /> : <Creadores listaCreadores={creadoresFiltrados} />}
                 </div>
-                <div>
-                    <img src={exploracion_img} alt="exploracion_img"></img>
-                    <h2>Iniciar Recorrido Completo</h2>
-                </div>
+            </div>
+            <div id='vr'></div>
+            <div className="contenido">
+                <img src={exploracion_img} alt="exploracion_img"></img>
+                <h1>Iniciar Recorrido Completo</h1>
             </div>
         </div>
     );
