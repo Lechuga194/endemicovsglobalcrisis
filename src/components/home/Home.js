@@ -1,9 +1,8 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import './Home.css'
 import home_info from '../../static/home_info.png'
 
-
-function Home(){
+function Home({onExploreClick}){
 
     return(
         <div class="home">
@@ -24,7 +23,7 @@ Aliqua officia Lorem duis adipisicing esse exercitation commodo elit nulla sunt 
                     </div>
                     <img src={home_info} alt="home_info"></img>
                 </div>
-                <p id="explorar">Explorar</p>
+                <p id="explorar" onClick={onExploreClick}>Explorar</p>
             </div>
         </div>
     );
