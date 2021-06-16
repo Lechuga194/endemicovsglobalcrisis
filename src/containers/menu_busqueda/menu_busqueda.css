@@ -1,0 +1,40 @@
+.busqueda {
+    display: grid;
+    grid-template-rows: 10% auto;
+}
+
+.nav {
+    height: 5vh;
+    display: grid;
+    grid-template-columns: 30% auto;
+    grid-column-gap: 15px;
+}
+
+.listacreadores{
+    margin-right: 20px;
+}
+
+.creadores{
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+.creadores ul {
+    list-style-type:none;
+}
+
+a {
+    cursor: pointer;
+    justify-self: start;
+    align-self: end;
+}
+
+.creadores p  {
+    transition: transform .1s;
+    margin: 0px 0px 5px 0px;
+    cursor: pointer;
+}
+  
+.creadores p:hover {
+    transform: scale(1.05);
+}

@@ -2,7 +2,7 @@
     display: grid;
     grid-template-columns: 5% 10% auto;
     background-color: white;
-    border-radius: 0px 20px 3px;
+    border-radius: 0px 20px 0px;
 }
 
 .searchbox input{
@@ -16,6 +16,7 @@
     border-color: transparent;
     outline-color: transparent;
     box-shadow: none;
+    font-size: 14px;
 }
 
 .searchbox img{

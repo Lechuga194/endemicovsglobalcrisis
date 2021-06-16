@@ -1,0 +1,11 @@
+.exploracion{
+    display: grid;
+    grid-template-columns: 48% auto 48%;
+    margin: 20px;
+}
+
+#vr{
+    border-left:1px solid whitesmoke;
+    margin-top: 30%;
+    height:100%;
+}
