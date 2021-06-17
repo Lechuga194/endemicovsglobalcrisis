@@ -1,9 +1,9 @@
 import React from 'react';
 
-import './exploracion.css'
+import './iniciar_recorrido.css'
 import exploracion_img from '../../static/exploracion.jpg'
 
-function Exploracion() {
+function Iniciar_Recorrido() {
     return(
         <div className="contenido">
             <img src={exploracion_img} alt="exploracion_img"></img>
@@ -12,4 +12,4 @@ function Exploracion() {
     );
 }
 
-export default Exploracion;
+export default Iniciar_Recorrido;

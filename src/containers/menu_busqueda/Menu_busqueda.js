@@ -57,7 +57,7 @@ let listacreadores = [
     }
 ]
 
-function Menu_busqueda() {
+function Menu_busqueda({onCreadorClick}) {
 
     const [search, setSearch] = useState('')
     const [currentPage, setCurrentPage] = useState('exploracion')
@@ -70,11 +70,6 @@ function Menu_busqueda() {
     const artistas = creadoresFiltrados.filter(creador => creador.rol === 'Artista');
     const investigadores = creadoresFiltrados.filter(creador => creador.rol === 'Investigador');
     const curadores = creadoresFiltrados.filter(creador => creador.rol === 'Curador');
-
-
-    const onCreadorClick = (creadorId) => {
-        console.log(creadorId)
-    }
 
     return(
         <div className="busqueda">
@@ -94,7 +89,7 @@ function Menu_busqueda() {
                             <div> 
                                 <ul>
                                     <li>{artistas.map(creador => 
-                                        <p key={creador.id} onClick={() => onCreadorClick(creador.id)}>
+                                        <p key={creador.id} onClick={() => onCreadorClick(creador)}>
                                             {creador.id} {creador.nombre} {creador.obras}</p>)}
                                     </li>
                                 </ul>
@@ -105,7 +100,7 @@ function Menu_busqueda() {
                                 <h1>Investigadores</h1>
                                 <ul>
                                 <li>{investigadores.map(creador => 
-                                        <p key={creador.id} onClick={() => onCreadorClick(creador.id)}>
+                                        <p key={creador.id} onClick={() => onCreadorClick(creador)}>
                                             {creador.id} {creador.nombre} {creador.obras}</p>)}
                                     </li>
                                 </ul>
