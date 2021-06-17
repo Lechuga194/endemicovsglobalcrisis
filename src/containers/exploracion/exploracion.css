@@ -1,6 +1,4 @@
 .container-detalles-creador{
-    background-color: rebeccapurple;
-    position:fixed;
     display: grid;
     grid-template-columns: 3% auto;
     height: 100vh;
@@ -8,7 +6,6 @@
 }
 
 .detalles-creador{
-    background-color: red;
     margin: 20px;
     grid-column-start: 2;
     display: grid;
@@ -27,14 +24,3 @@
     margin: 3vh;
 }
 
-.galeria {
-    background-color: aqua;
-    display: grid;
-    grid-template-columns: auto auto auto;
-    flex-wrap: wrap;
-}
-
-.galeria img {
-    width: 70%;
-    height: auto;
-}

@@ -1,10 +1,10 @@
 import React, {useState, useEffect} from 'react';
+import './imagen.css'
+
 
 function Imagen({source}) {
     return(
-        <div>
-            <img src={source}></img>
-        </div>
+            <img id="imagen" src={source}></img>
     );
 }
 
