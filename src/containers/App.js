@@ -6,7 +6,7 @@ import Exploracion from './exploracion/Exploracion'
 import './app.css'
 
 function App() {
-    const [currentPage, setCurrentPage] = useState('exploracion') //TODO por defecto debe ser home
+    const [currentPage, setCurrentPage] = useState('home') //TODO por defecto debe ser home
     const onExploreClick = () => setCurrentPage('exploracion');
 
     return(

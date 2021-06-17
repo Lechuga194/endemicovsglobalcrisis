@@ -2,8 +2,7 @@ import React, {useState, useEffect} from 'react';
 import Iniciar_Recorrido from '../../components/iniciar_recorrido/Iniciar_Recorrido'
 import Menu_busqueda from '../menu_busqueda/Menu_busqueda'
 import Navbar from '../../components/navbar/Navbar'
-import Imagen from '../imagen/Imagen'
-import Image_container from '../../components/image_container/Image_container'
+import Image_container from '../image_container/Image_container'
 import { useSpring, animated, config } from 'react-spring'
 import './exploracion.css'
 
@@ -41,7 +40,7 @@ const listofimages = [
 function Exploracion() {
 
     const [creador, setCreador] = useState(null);
-    const [currentPage, setCurrentPage] = useState('') //TODO por defecto debe ser exploracion
+    const [currentPage, setCurrentPage] = useState('exploracion') //TODO por defecto debe ser exploracion
     const [images, setImages] = useState(listofimages) //Arreglo de imagenes del artista
     const onCreadorClick = (creador) => {
         if(creador != null) setCreador(creador);
@@ -51,20 +50,14 @@ function Exploracion() {
         setCurrentPage('exploracion')
     }
 
-    const springwidth = useSpring({
-        from:{width: "0%"},
-        to:{width: "100%"},
-        config:config.slow
-    })
-
     return(
         <>
             {currentPage === 'exploracion' ? 
-            <animated.div style={springwidth} className="exploracion">
+            <div className="exploracion">
                 <Menu_busqueda onCreadorClick={onCreadorClick}/>
                 <div id='vr'></div>
                 <Iniciar_Recorrido />
-            </animated.div> : 
+            </div> : 
             <div class="container-detalles-creador">
                 <Navbar redirect={redirect}/>
                 <div className="detalles-creador">

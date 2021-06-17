@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import Imagen from '../../containers/imagen/Imagen'
+import Imagen from '../imagen/Imagen'
 import './image_container.css'
 import back from '../../static/navbar/back.jpg'
 
