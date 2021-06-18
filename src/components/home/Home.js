@@ -15,14 +15,7 @@ function Home({onExploreClick}){
                     <p id={styles.subtitulo}>Exposición</p>
                     <p id={styles.maintitle}>Endémico vs Global: Crisis</p>
                     <p id={styles.texto}>Reprehenderit voluptate nulla laboris Lorem magna in do. Tempor proident amet aliquip anim laborum ad culpa eu. Excepteur esse mollit elit nostrud nostrud veniam sint laborum qui id id sunt ullamco.</p>
-                    <nav onClick={onExploreClick}>
-                        <ul>
-                            <li>
-                            Iniciar
-                            <span></span>
-                            </li>
-                        </ul>
-                        </nav>
+                    <nav onClick={onExploreClick}><ul><li>Iniciar<span></span></li></ul></nav>
                 </div>
             </div>
         </div>

@@ -1,0 +1,163 @@
+/* .container-detalles-creador{
+    display: grid;
+    grid-template-columns: 3% auto;
+    height: 100vh;
+    width: 100vw;
+}
+
+.detalles-creador{
+    margin: 20px;
+    grid-column-start: 2;
+    display: grid;
+    grid-template-rows: auto auto;
+}
+
+.detalles-creador h1 {
+    margin: 3vh 3vh 1vh 3vh;
+}
+
+.detalles-creador h3 {
+    margin: 0vh 3vh 3vh 3vh;
+}
+
+.detalles-creador p {
+    margin: 3vh;
+} */
+
+/* TODO ESTO NO DEBE IR AQUI! */
+
+.exploracion{
+    grid-template-columns: 50% 50%;
+    display: grid;
+    grid-template-rows: 100vh;
+    align-items: center;
+    justify-items: center;
+}
+
+.exploracion #menuexploracion{
+    width: 50vw;
+    height: 100vh;
+    align-self: start;
+}
+
+.contenido img {
+    width: 50%;
+}
+
+.contenido {
+    display: grid;
+    grid-template-rows: auto auto;
+    justify-items: center;
+    align-content: center;
+    text-align: center;
+    row-gap: 10%;
+}
+
+.texto{
+    font-size: 30px;
+    align-self: center;
+}
+
+
+@media (max-width: 850px){
+    .exploracion{
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: auto auto ;
+        align-items: center;
+        justify-items: center;
+    }
+    
+    .exploracion #menuexploracion{
+        width: 100vw;
+        height: 70vh;
+        align-self: start;
+    }
+    
+    .contenido img {
+        display: none;
+    }
+    
+    .contenido {
+        display: grid;
+        grid-template-rows: auto auto;
+        justify-items: center;
+        align-content: center;
+        text-align: center;
+        row-gap: 10%;
+    }
+    
+    .texto{
+        font-size: 30px;
+        align-self: center;
+        margin: 50px;
+    }
+}
+
+.button nav ul {
+    cursor: pointer;
+    list-style-type: none;
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+
+.button nav ul li {
+    position: relative;
+    --c: rgb(255, 255, 255);
+    color: var(--c);
+    font-size: 20px;
+    border-radius: 0.5em;
+    width: 12em;
+    height: 3em;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: sans-serif;
+    letter-spacing: 0.1em;
+    text-align: center;
+    line-height: 3em;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    transition: 0.5s;
+    margin: 1em;
+}
+
+/* CSS repetido pq el CSS es barato */
+
+.button nav ul li span {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--c);
+    transform: translateY(150%);
+    border-radius: 50%;
+    left: calc((var(--n) - 1) * 25%);
+    transition: 0.5s;
+    transition-delay: calc((var(--n) - 1) * 0.1s);
+    z-index: -1;
+}
+
+.button nav ul li:hover {
+    color: rgb(0, 0, 0);
+}
+
+.button nav ul li:hover span {
+    transform: translateY(0) scale(2);
+}
+
+.button nav ul li span:nth-child(1) {
+    --n: 1;
+}
+
+.button nav ul li span:nth-child(2) {
+    --n: 2;
+}
+
+.button nav ul li span:nth-child(3) {
+    --n: 3;
+}
+
+.button nav ul li span:nth-child(4) {
+    --n: 4;
+}

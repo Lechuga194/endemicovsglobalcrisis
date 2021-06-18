@@ -2,9 +2,7 @@ import React, {useState, useEffect} from 'react';
 import Menu_busqueda from '../menu_busqueda/Menu_busqueda'
 import Navbar from '../../components/navbar/Navbar'
 import Image_container from '../image_container/Image_container'
-import { useSpring, animated, config } from 'react-spring'
-import './exploracion.css'
-// import styles from './iniciar_recorrido.module.css'
+import styles from './exploracion.module.css'
 import exploracion_img from '../../static/exploracion.jpg'
 
 const texto = "Proident aliquip nulla aute cillum et deserunt veniam. Dolore irure elit adipisicing amet nulla ut deserunt cillum. Tempor proident irure consequat excepteur eu consectetur do cillum. Lorem voluptate adipisicing veniam id eu. Culpa incididunt excepteur aliqua consequat labore pariatur culpa do id. Incididunt id exercitation elit dolor velit aliqua magna sunt excepteur do irure velit officia dolor. Incididunt consequat magna tempor sunt veniam nisi occaecat laborum ut nisi pariatur. Reprehenderit cillum incididunt elit voluptate. Consectetur reprehenderit velit pariatur veniam magna culpa. Irure occaecat non tempor et cupidatat commodo duis nulla magna nostrud sunt ea in. Culpa sunt do culpa do minim sit pariatur.";
@@ -55,16 +53,19 @@ function Exploracion() {
         setCurrentPage('exploracion')
     }
 
+    const onExploreClick = () => {
+        
+    }
+
     return(
         <>
             {currentPage === 'exploracion' ? 
 
-            <div className="exploracion">
-                <Menu_busqueda onCreadorClick={onCreadorClick}/>
-                <div id='vr'></div>
-                <div className='contenido'>
+            <div className={styles.exploracion}>
+                <div id={styles.menuexploracion}><Menu_busqueda onCreadorClick={onCreadorClick}/></div>
+                <div className={styles.contenido}>
                     <img src={exploracion_img} alt="exploracion_img"></img>
-                    <h1>Iniciar Recorrido Completo</h1>
+                    <div className={styles.button}><nav onClick={onExploreClick}><ul><li>Iniciar<span></span></li></ul></nav></div>
                 </div>
             </div> 
 
