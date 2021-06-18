@@ -11,7 +11,6 @@ function Image_container({images}){
     const [firstImage, setFirstImage] = useState(0);
     const [middleImage, setMiddleImage] = useState(1);
     const [lastImage, setLastImage] = useState(2);
-    const [array, setArray] = useState([]);
 
     const prevImage = () => {
         if(firstImage == 0) return;

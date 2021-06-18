@@ -1,61 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import Searchbox from '../../components/searchbox/Searchbox'
-
-//estaticos
+import listacreadores from './utils'
 import styles from './menu_busqueda.module.css'
-
-//TODO quitar y pedir a la BD
-let listacreadores = [
-    {
-        id: 0,
-        rol: 'Artista',
-        nombre: 'Sebastian',
-        obras: 5
-
-    },
-    {
-        id: 1,
-        rol: 'Investigador',
-        nombre: 'Isaac',
-        obras: 3
-
-    },
-    {
-        id: 2,
-        rol: 'Curador',
-        nombre: 'Nick',
-        obras: 6
-
-    },
-    {
-        id: 3,
-        rol: 'Artista',
-        nombre: 'Bogo',
-        obras: 5
-
-    },
-    {
-        id: 4,
-        rol: 'Investigador',
-        nombre: 'Juddy',
-        obras: 3
-
-    },
-    {
-        id: 5,
-        rol: 'Curador',
-        nombre: 'Nick Wilde',
-        obras: 6
-
-    },
-    {
-        id: 6,
-        rol: 'Artista',
-        nombre: 'Legosi',
-        obras: 6
-
-    }
-]
 
 function Menu_busqueda({onCreadorClick}) {
 
@@ -70,6 +16,9 @@ function Menu_busqueda({onCreadorClick}) {
     const investigadores = creadoresFiltrados.filter(creador => creador.rol === 'Investigador');
     const curadores = creadoresFiltrados.filter(creador => creador.rol === 'Curador');
 
+
+    //TODO CUANDO PULSO PARA SALAS EL RESULTADO QUEDA DETRAS DE LA BARRA DE BUSQUEDA
+
     return(
         <div className={styles.busqueda}>
             <div className={styles.nav}>
@@ -79,7 +28,7 @@ function Menu_busqueda({onCreadorClick}) {
                     <a onClick={() => onButtonClick('busqueda_nombres')}>Buscar por nombre</a>
                 }
             </div>
-            <div className={styles.tiposbusqueda}>
+            <div className={styles.tiposbusqueda}> 
                 {currentPage == 'busqueda_salas' ? <div> Salas </div> : 
                     <div className={styles.listacreadores}>
                         <div>

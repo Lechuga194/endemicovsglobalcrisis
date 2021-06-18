@@ -1,31 +1,3 @@
-/* .container-detalles-creador{
-    display: grid;
-    grid-template-columns: 3% auto;
-    height: 100vh;
-    width: 100vw;
-}
-
-.detalles-creador{
-    margin: 20px;
-    grid-column-start: 2;
-    display: grid;
-    grid-template-rows: auto auto;
-}
-
-.detalles-creador h1 {
-    margin: 3vh 3vh 1vh 3vh;
-}
-
-.detalles-creador h3 {
-    margin: 0vh 3vh 3vh 3vh;
-}
-
-.detalles-creador p {
-    margin: 3vh;
-} */
-
-/* TODO ESTO NO DEBE IR AQUI! */
-
 .exploracion{
     grid-template-columns: 50% 50%;
     display: grid;
