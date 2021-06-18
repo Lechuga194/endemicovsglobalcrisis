@@ -40,26 +40,33 @@
     align-self: start;
 }
 
+.contenido {
+    display: grid;
+    grid-template-rows: 50% auto;
+    justify-items: center;
+    align-content: start;
+    text-align: center;
+    row-gap: 30%;
+}
+
+
 .contenido img {
     width: 50%;
 }
 
-.contenido {
-    display: grid;
-    grid-template-rows: auto auto;
-    justify-items: center;
-    align-content: center;
-    text-align: center;
-    row-gap: 10%;
-}
-
-.texto{
-    font-size: 30px;
-    align-self: center;
+@media (max-height: 600px), (max-width: 400px){
+    .contenido img {
+        display: none;
+    }
 }
 
 
 @media (max-width: 850px){
+
+    .contenido img {
+        width: 30%;
+    }
+
     .exploracion{
         display: grid;
         grid-template-columns: auto;
@@ -70,12 +77,8 @@
     
     .exploracion #menuexploracion{
         width: 100vw;
-        height: 70vh;
+        height: auto;
         align-self: start;
-    }
-    
-    .contenido img {
-        display: none;
     }
     
     .contenido {
@@ -87,23 +90,17 @@
         row-gap: 10%;
     }
     
-    .texto{
-        font-size: 30px;
-        align-self: center;
-        margin: 50px;
-    }
 }
+
 
 .button nav ul {
     cursor: pointer;
     list-style-type: none;
-    position: relative;
     margin: 0;
     padding: 0;
 }
 
 .button nav ul li {
-    position: relative;
     --c: rgb(255, 255, 255);
     color: var(--c);
     font-size: 20px;
@@ -122,8 +119,6 @@
     transition: 0.5s;
     margin: 1em;
 }
-
-/* CSS repetido pq el CSS es barato */
 
 .button nav ul li span {
     position: absolute;

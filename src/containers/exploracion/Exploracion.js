@@ -68,7 +68,7 @@ function Exploracion() {
                     <div className={styles.button}><nav onClick={onExploreClick}><ul><li>Iniciar<span></span></li></ul></nav></div>
                 </div>
             </div> 
-
+            
             : 
             <div className="container-detalles-creador">
                 <Navbar redirect={redirect}/>

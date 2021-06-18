@@ -79,9 +79,9 @@ function Menu_busqueda({onCreadorClick}) {
                     <a onClick={() => onButtonClick('busqueda_nombres')}>Buscar por nombre</a>
                 }
             </div>
-            <div className={styles.listacreadores}>
+            <div className={styles.tiposbusqueda}>
                 {currentPage == 'busqueda_salas' ? <div> Salas </div> : 
-                    <div className={styles.creadores}>
+                    <div className={styles.listacreadores}>
                         <div>
                             <p className={styles.creador}>Artistas</p>
                             <div> 

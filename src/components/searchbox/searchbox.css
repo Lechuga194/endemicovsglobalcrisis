@@ -32,5 +32,7 @@ input[type="search"]::-webkit-search-results-decoration {
 }
 
 @media (max-width: 400px){
-
+    .searchbox{
+        font-size: 10px;
+    }
 }
