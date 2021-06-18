@@ -39,6 +39,7 @@ body {
 }
 
 nav ul {
+    cursor: pointer;
     list-style-type: none;
     position: relative;
     margin: 0;

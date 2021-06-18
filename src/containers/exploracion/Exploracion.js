@@ -1,10 +1,11 @@
 import React, {useState, useEffect} from 'react';
-import Iniciar_Recorrido from '../../components/iniciar_recorrido/Iniciar_Recorrido'
 import Menu_busqueda from '../menu_busqueda/Menu_busqueda'
 import Navbar from '../../components/navbar/Navbar'
 import Image_container from '../image_container/Image_container'
 import { useSpring, animated, config } from 'react-spring'
 import './exploracion.css'
+// import styles from './iniciar_recorrido.module.css'
+import exploracion_img from '../../static/exploracion.jpg'
 
 const texto = "Proident aliquip nulla aute cillum et deserunt veniam. Dolore irure elit adipisicing amet nulla ut deserunt cillum. Tempor proident irure consequat excepteur eu consectetur do cillum. Lorem voluptate adipisicing veniam id eu. Culpa incididunt excepteur aliqua consequat labore pariatur culpa do id. Incididunt id exercitation elit dolor velit aliqua magna sunt excepteur do irure velit officia dolor. Incididunt consequat magna tempor sunt veniam nisi occaecat laborum ut nisi pariatur. Reprehenderit cillum incididunt elit voluptate. Consectetur reprehenderit velit pariatur veniam magna culpa. Irure occaecat non tempor et cupidatat commodo duis nulla magna nostrud sunt ea in. Culpa sunt do culpa do minim sit pariatur.";
 const listofimages = [
@@ -42,10 +43,14 @@ function Exploracion() {
     const [creador, setCreador] = useState(null);
     const [currentPage, setCurrentPage] = useState('exploracion') //TODO por defecto debe ser exploracion
     const [images, setImages] = useState(listofimages) //Arreglo de imagenes del artista
+    
     const onCreadorClick = (creador) => {
-        if(creador != null) setCreador(creador);
-        setCurrentPage('detalles_creador');
+        if(creador != null){
+            setCreador(creador);
+            setCurrentPage('detalles_creador');
+        }
     };
+    
     const redirect = () => {
         setCurrentPage('exploracion')
     }
@@ -53,12 +58,18 @@ function Exploracion() {
     return(
         <>
             {currentPage === 'exploracion' ? 
+
             <div className="exploracion">
                 <Menu_busqueda onCreadorClick={onCreadorClick}/>
                 <div id='vr'></div>
-                <Iniciar_Recorrido />
-            </div> : 
-            <div class="container-detalles-creador">
+                <div className='contenido'>
+                    <img src={exploracion_img} alt="exploracion_img"></img>
+                    <h1>Iniciar Recorrido Completo</h1>
+                </div>
+            </div> 
+
+            : 
+            <div className="container-detalles-creador">
                 <Navbar redirect={redirect}/>
                 <div className="detalles-creador">
                     <div className="datos">

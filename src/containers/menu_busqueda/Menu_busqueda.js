@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import Searchbox from '../../components/searchbox/Searchbox'
 
 //estaticos
-import './menu_busqueda.css'
+import styles from './menu_busqueda.module.css'
 
 //TODO quitar y pedir a la BD
 let listacreadores = [
@@ -60,32 +60,30 @@ let listacreadores = [
 function Menu_busqueda({onCreadorClick}) {
 
     const [search, setSearch] = useState('')
-    const [currentPage, setCurrentPage] = useState('exploracion')
-    const [creador, setCreador] = useState(null)
+    const [currentPage, setCurrentPage] = useState('busqueda_nombres')
 
     const onButtonClick = (page) => setCurrentPage(page);
     const onChangeSearch = (event) => setSearch(event.target.value)
-    const creadoresFiltrados = listacreadores.filter(creador => creador.nombre.toLowerCase().includes(search.toLowerCase()))
 
+    const creadoresFiltrados = listacreadores.filter(creador => creador.nombre.toLowerCase().includes(search.toLowerCase()))
     const artistas = creadoresFiltrados.filter(creador => creador.rol === 'Artista');
     const investigadores = creadoresFiltrados.filter(creador => creador.rol === 'Investigador');
     const curadores = creadoresFiltrados.filter(creador => creador.rol === 'Curador');
 
     return(
-        <div className="busqueda">
-            <div className="nav">
+        <div className={styles.busqueda}>
+            <div className={styles.nav}>
                 <Searchbox onChangeSearch={onChangeSearch}/>
-                {currentPage == 'exploracion' ? 
-                    <a onClick={() => onButtonClick('salas')}>Buscar por salas</a> : 
-                    <a onClick={() => onButtonClick('exploracion')}>Buscar por nombre</a>
+                {currentPage == 'busqueda_nombres' ? 
+                    <a onClick={() => onButtonClick('busqueda_salas')}>Buscar por salas</a> : 
+                    <a onClick={() => onButtonClick('busqueda_nombres')}>Buscar por nombre</a>
                 }
             </div>
-            <div className="listacreadores">
-                {
-                    currentPage == 'salas' ? <div> Salas </div> : 
-                    <div className="creadores">
+            <div className={styles.listacreadores}>
+                {currentPage == 'busqueda_salas' ? <div> Salas </div> : 
+                    <div className={styles.creadores}>
                         <div>
-                            <h1>Artistas</h1>
+                            <p className={styles.creador}>Artistas</p>
                             <div> 
                                 <ul>
                                     <li>{artistas.map(creador => 
@@ -97,7 +95,7 @@ function Menu_busqueda({onCreadorClick}) {
                         </div>
                         <div>
                             <div>
-                                <h1>Investigadores</h1>
+                            <p className={styles.creador}>Investigadores</p>
                                 <ul>
                                 <li>{investigadores.map(creador => 
                                         <p key={creador.id} onClick={() => onCreadorClick(creador)}>
@@ -106,15 +104,14 @@ function Menu_busqueda({onCreadorClick}) {
                                 </ul>
                             </div>
                             <div>
-                                <h1>Curadores</h1>
+                            <p className={styles.creador}>Curadores</p>
                                 <ul>
                                     <li>{curadores.map(creador => 
                                         <p key={creador.id}>{creador.id} {creador.nombre}</p>)}</li>
                                 </ul>
                             </div>
                         </div>
-                    </div>
-                }
+                    </div>}
             </div>
         </div>
     );
