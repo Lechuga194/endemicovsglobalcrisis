@@ -5,7 +5,7 @@ import home from '../../static/navbar/home.jpg'
 import menu from '../../static/navbar/menu.jpg'
 import styles from './navbar.module.css'
 
-function Navbar({redirect}){
+function Navbar({goHome, goBack}){
 
     const [showMenu, setShowMenu] = useState(false);
     const showSideBar = () => setShowMenu(!showMenu);
@@ -15,17 +15,17 @@ function Navbar({redirect}){
         showMenu ? 
             <nav className={styles.navbarmenu}> 
                 <div className={styles.upper}>
-                    <img src={back} onClick={redirect}></img>
-                    <img src={home}></img>    
+                    <img src={back} onClick={goBack}></img>
+                    <img src={home} onClick={goHome}></img>    
                     <h3>Endémico vs Global: Crisis</h3>
                     <img src={menu} onClick={showSideBar}></img>
                 </div>
                 <Menu_busqueda onCreadorClick={onCreadorClick} isSideMenu={true} />
             </nav> : 
             <nav className={styles.smallnavbar}>
-                <img src={back} onClick={redirect}></img>
+                <img src={back} onClick={goBack}></img>
                 <img src={menu} onClick={showSideBar}></img>
-                <img src={home} id={styles.home} onClick={redirect}></img>
+                <img src={home} id={styles.home} onClick={goHome}></img>
             </nav>
     );
 }

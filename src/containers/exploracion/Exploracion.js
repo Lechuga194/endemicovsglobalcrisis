@@ -5,7 +5,7 @@ import exploracion_img from '../../static/exploracion.jpg'
 import styles from './exploracion.module.css'
 
 
-function Exploracion() {
+function Exploracion({goHome}) {
 
     const [creador, setCreador] = useState({
         id: 1,
@@ -16,6 +16,7 @@ function Exploracion() {
 
     }); //TODO POR DEFECTO NULL
     const [currentPage, setCurrentPage] = useState('exploracion') //TODO por defecto debe ser exploracion
+    const goBack = () => setCurrentPage('exploracion') //Perdon por la forma tan warra de hacer routes, no tengo tiempo de aprender react router
     
     const onCreadorClick = (creadorSeleccionado) => {
         if(creadorSeleccionado != null){
@@ -39,8 +40,8 @@ function Exploracion() {
                     <div className={styles.button}><nav onClick={onExploreClick}><ul><li>Iniciar<span></span></li></ul></nav></div>
                 </div>
             </div> : 
-            <Detalles_creador creador={creador}/>}
-            {/* RECORRIDO NORMAL Y RECORRIDO POR SALAS */}
+            <Detalles_creador goHome={goHome} goBack={goBack} creador={creador}/>}
+            {/* TODO RECORRIDO NORMAL Y RECORRIDO POR SALAS */}
         </>
     );
 }

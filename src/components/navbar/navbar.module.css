@@ -13,6 +13,7 @@
 .smallnavbar img{
     width: 30px;
     margin-top: 80%;
+    cursor: pointer;
 }
 
 .navbarmenu{
@@ -44,6 +45,7 @@
 
 .upper img{
     width: 70%;
+    cursor: pointer;
 }
 
 @media (max-width: 750px){    

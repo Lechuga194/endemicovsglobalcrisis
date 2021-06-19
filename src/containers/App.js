@@ -6,11 +6,12 @@ import Exploracion from './exploracion/Exploracion'
 import './app.css'
 
 function App() {
-    const [currentPage, setCurrentPage] = useState('exploracion') //TODO por defecto debe ser home
+    const [currentPage, setCurrentPage] = useState('home')
     const onExploreClick = () => setCurrentPage('exploracion');
+    const goHome = () => setCurrentPage('home')
 
     return(
-        currentPage == 'home' ? <Home onExploreClick={onExploreClick}/> : <Exploracion />
+        currentPage == 'home' ? <Home onExploreClick={onExploreClick}/> : <Exploracion goHome={goHome}/>
     );
 }
 

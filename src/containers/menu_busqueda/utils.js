@@ -1,5 +1,5 @@
-let listacreadores = [
-    {
+let texto_investigacion = 'Veniam do esse eiusmod veniam deserunt ut voluptate ex cupidatat. Consequat tempor culpa sunt quis aliquip laboris ex tempor elit. Aliquip elit occaecat cillum dolor labore est commodo magna excepteur laborum anim fugiat nisi ad. Eiusmod anim culpa duis mollit culpa labore. Incididunt tempor tempor proident do minim aute cupidatat sint eu ullamco consequat Lorem id eu. Occaecat sint esse ipsum pariatur exercitation minim sunt aute officia. Tempor veniam mollit officia amet duis laboris. Ea incididunt ea sunt officia laboris commodo laboris. Reprehenderit ex quis velit ullamco ullamco sunt elit dolore consequat. Tempor amet velit commodo reprehenderit reprehenderit non nisi incididunt Lorem eu dolor ipsum. Aute nostrud fugiat proident eu elit ad nostrud irure excepteur est cupidatat adipisicing ea in. Eu esse elit ex laborum eiusmod voluptate sint est. Culpa fugiat ex enim irure proident in sit cupidatat. Consectetur velit elit nisi sunt sit consequat velit'
+let listacreadores = [    {
         id: 0,
         rol: 'Artista',
         nombre: 'Sebastian',
@@ -36,7 +36,26 @@ let listacreadores = [
         rol: 'Investigador',
         nombre: 'Juddy',
         obras: 3,
-        pais: 'Japones'
+        pais: 'Japones',
+        textos_investigacion: [
+            {
+                titulo: 'TITULO',
+                texto: texto_investigacion
+            },
+            {
+                titulo: 'TITULO2',
+                texto: texto_investigacion
+            },
+            {
+                titulo: 'TITULO3',
+                texto: texto_investigacion
+            },
+            {
+                titulo: 'TITULO4',
+                texto: texto_investigacion
+            },
+            
+        ]
 
     },
     {

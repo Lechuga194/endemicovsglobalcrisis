@@ -6,7 +6,7 @@ import styles from './menu_busqueda.module.css'
 function Menu_busqueda({onCreadorClick, isSideMenu}) {
 
     const [search, setSearch] = useState('')
-    const [currentPage, setCurrentPage] = useState('busqueda_ombres') //TODO POR DEFECTO DEBE SER NOMBRES
+    const [currentPage, setCurrentPage] = useState('busqueda_nombres') //TODO POR DEFECTO DEBE SER NOMBRES
     const [sala, setSala] = useState(salas[0])
 
     const onButtonClick = (page) => setCurrentPage(page);
