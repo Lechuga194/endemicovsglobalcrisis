@@ -1,14 +1,21 @@
 import React, {useState} from 'react';
 import Menu_busqueda from '../menu_busqueda/Menu_busqueda'
 import Detalles_creador from '../detalles_creador/Detalles_creador'
-import styles from './exploracion.module.css'
 import exploracion_img from '../../static/exploracion.jpg'
+import styles from './exploracion.module.css'
 
 
 function Exploracion() {
 
-    const [creador, setCreador] = useState(null);
-    const [currentPage, setCurrentPage] = useState('exploracion') //TODO por defecto debe ser exploracion
+    const [creador, setCreador] = useState({
+        id: 1,
+        rol: 'Artista',
+        nombre: 'Isaac',
+        obras: 3,
+        pais: 'Mexicano'
+
+    }); //TODO POR DEFECTO NULL
+    const [currentPage, setCurrentPage] = useState('') //TODO por defecto debe ser exploracion
     
     const onCreadorClick = (creadorSeleccionado) => {
         if(creadorSeleccionado != null){

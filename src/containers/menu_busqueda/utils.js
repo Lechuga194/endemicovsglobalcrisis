@@ -4,7 +4,7 @@ let listacreadores = [
         rol: 'Artista',
         nombre: 'Sebastian',
         obras: 5,
-        nacionalidad: 'Mexicano'
+        pais: 'Mexicano'
 
     },
     {
@@ -12,7 +12,7 @@ let listacreadores = [
         rol: 'Investigador',
         nombre: 'Isaac',
         obras: 3,
-        nacionalidad: 'Mexicano'
+        pais: 'Mexicano'
 
     },
     {
@@ -20,7 +20,7 @@ let listacreadores = [
         rol: 'Curador',
         nombre: 'Nick',
         obras: 6,
-        nacionalidad: 'Japones'
+        pais: 'Japones'
 
     },
     {
@@ -28,7 +28,7 @@ let listacreadores = [
         rol: 'Artista',
         nombre: 'Bogo',
         obras: 5,
-        nacionalidad: 'Mexicano'
+        pais: 'Mexicano'
 
     },
     {
@@ -36,7 +36,7 @@ let listacreadores = [
         rol: 'Investigador',
         nombre: 'Juddy',
         obras: 3,
-        nacionalidad: 'Japones'
+        pais: 'Japones'
 
     },
     {
@@ -44,7 +44,7 @@ let listacreadores = [
         rol: 'Curador',
         nombre: 'Nick Wilde',
         obras: 6,
-        nacionalidad: 'Mexicano'
+        pais: 'Mexicano'
 
     },
     {
@@ -52,7 +52,7 @@ let listacreadores = [
         rol: 'Artista',
         nombre: 'Legosi',
         obras: 6,
-        nacionalidad: 'Japones'
+        pais: 'Japones'
 
     }
 ]
