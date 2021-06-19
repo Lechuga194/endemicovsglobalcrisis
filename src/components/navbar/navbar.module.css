@@ -52,6 +52,7 @@
         grid-template-columns: 10% 10% auto;
         height: 50px;
         width: 100%;
+        column-gap: 10px;
     }
 
     .smallnavbar img{
@@ -76,5 +77,5 @@
 @media (max-height: 550px) and (max-width: 650px){
     .smallnavbar{
         height: 40px;
-    }
+    }   
 }
