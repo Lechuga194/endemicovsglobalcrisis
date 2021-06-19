@@ -3,7 +3,7 @@ import Searchbox from '../../components/searchbox/Searchbox'
 import {listacreadores, salas} from './utils'
 import styles from './menu_busqueda.module.css'
 
-function Menu_busqueda({onCreadorClick, isSideMenu}) {
+function Menu_busqueda({onCreadorClick, isSideMenu, changeCreador}) {
 
     const [search, setSearch] = useState('')
     const [currentPage, setCurrentPage] = useState('busqueda_nombres') //TODO POR DEFECTO DEBE SER NOMBRES
@@ -35,10 +35,18 @@ function Menu_busqueda({onCreadorClick, isSideMenu}) {
                             <p className={styles.creador}>Artistas</p>
                             <div> 
                                 <ul>
-                                    <li>{artistas.map(creador => 
-                                        <p key={creador.id} onClick={() => onCreadorClick(creador)}>
-                                            {creador.id} {creador.nombre} {creador.obras}</p>)}
-                                    </li>
+                                    {
+                                        isSideMenu ? 
+                                        <li>{artistas.map(creador => 
+                                            <p key={creador.id} onClick={() => changeCreador(creador)}>
+                                                {creador.id} {creador.nombre} {creador.obras}</p>)}
+                                        </li>
+                                        : 
+                                        <li>{artistas.map(creador => 
+                                            <p key={creador.id} onClick={() => onCreadorClick(creador)}>
+                                                {creador.id} {creador.nombre} {creador.obras}</p>)}
+                                        </li>
+                                    }
                                 </ul>
                             </div>
                         </div>
@@ -46,9 +54,17 @@ function Menu_busqueda({onCreadorClick, isSideMenu}) {
                             <div>
                             <p className={styles.creador}>Investigadores</p>
                                 <ul>
-                                <li>{investigadores.map(creador => 
-                                        <p key={creador.id} onClick={() => onCreadorClick(creador)}>
-                                            {creador.id} {creador.nombre} {creador.obras}</p>)}
+                                    <li>
+                                    {
+                                        isSideMenu ? 
+                                        investigadores.map(creador => 
+                                            <p key={creador.id} onClick={() => changeCreador(creador)}>
+                                                {creador.id} {creador.nombre} {creador.obras}</p>)
+                                        :
+                                        investigadores.map(creador => 
+                                            <p key={creador.id} onClick={() => onCreadorClick(creador)}>
+                                                {creador.id} {creador.nombre} {creador.obras}</p>)
+                                    }
                                     </li>
                                 </ul>
                             </div>

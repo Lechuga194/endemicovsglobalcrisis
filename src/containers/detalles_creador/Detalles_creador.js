@@ -8,18 +8,21 @@ import styles from './detallescreador.module.css'
 
 function Detalles_creador({goHome, goBack, creador}){
 
+    const [currentCreador, setCurrentCreador] = useState(creador)
+
+    const changeCreador = (newCreador) => setCurrentCreador(newCreador)
     const executeOnClick = (isExpanded) => console.log(isExpanded);
     const onClickImage = (id) =>{console.log(id)}
 
     return(
         <div className={styles.container}>
-            <div><Navbar goHome={goHome} goBack={goBack}/></div>
+            <div><Navbar goHome={goHome} goBack={goBack} changeCreador={changeCreador}/></div>
             {
-                creador.rol == 'Artista' ? 
+                currentCreador.rol == 'Artista' ? 
                     <div>
                         <div className={styles.datos}>
-                            <h1>{creador.nombre}</h1>
-                            <h3>{creador.pais}</h3>
+                            <h1>{currentCreador.nombre}</h1>
+                            <h3>{currentCreador.pais}</h3>
                             <ShowMoreText
                                 lines={4}
                                 more='Ver más...'
@@ -55,8 +58,8 @@ function Detalles_creador({goHome, goBack, creador}){
                 : 
                 <div>
                     <div className={styles.datos}>
-                        <h1>{creador.nombre}</h1>
-                        <h3>{creador.pais}</h3>
+                        <h1>{currentCreador.nombre}</h1>
+                        <h3>{currentCreador.pais}</h3>
                         <ShowMoreText
                             lines={4}
                             more='Ver más...'
@@ -68,8 +71,8 @@ function Detalles_creador({goHome, goBack, creador}){
                         >{texto}</ShowMoreText>
                         <div className={styles.textos}>
                             {
-                                creador.textos_investigacion != null ? 
-                                creador.textos_investigacion.map(texto =>
+                                currentCreador.textos_investigacion != null ? 
+                                currentCreador.textos_investigacion.map(texto =>
                                 <div>
                                     <p id={styles.textotitulo}>{texto.titulo}</p>
                                     <p id={styles.textocuerpo}>{texto.texto}</p>

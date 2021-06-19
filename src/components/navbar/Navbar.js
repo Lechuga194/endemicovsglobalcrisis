@@ -5,7 +5,7 @@ import home from '../../static/navbar/home.jpg'
 import menu from '../../static/navbar/menu.jpg'
 import styles from './navbar.module.css'
 
-function Navbar({goHome, goBack}){
+function Navbar({goHome, goBack, changeCreador}){
 
     const [showMenu, setShowMenu] = useState(false);
     const showSideBar = () => setShowMenu(!showMenu);
@@ -20,7 +20,7 @@ function Navbar({goHome, goBack}){
                     <h3>Endémico vs Global: Crisis</h3>
                     <img src={menu} onClick={showSideBar}></img>
                 </div>
-                <Menu_busqueda onCreadorClick={onCreadorClick} isSideMenu={true} />
+                <Menu_busqueda onCreadorClick={onCreadorClick} isSideMenu={true} changeCreador={changeCreador}/>
             </nav> : 
             <nav className={styles.smallnavbar}>
                 <img src={back} onClick={goBack}></img>
