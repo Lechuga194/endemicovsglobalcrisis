@@ -1,12 +1,13 @@
 import React, {useState, useEffect} from 'react';
 import Searchbox from '../../components/searchbox/Searchbox'
-import listacreadores from './utils'
+import {listacreadores, salas} from './utils'
 import styles from './menu_busqueda.module.css'
 
-function Menu_busqueda({onCreadorClick}) {
+function Menu_busqueda({onCreadorClick, isSideMenu}) {
 
     const [search, setSearch] = useState('')
-    const [currentPage, setCurrentPage] = useState('busqueda_nombres')
+    const [currentPage, setCurrentPage] = useState('busqueda_ombres') //TODO POR DEFECTO DEBE SER NOMBRES
+    const [sala, setSala] = useState(salas[0])
 
     const onButtonClick = (page) => setCurrentPage(page);
     const onChangeSearch = (event) => setSearch(event.target.value)
@@ -15,9 +16,8 @@ function Menu_busqueda({onCreadorClick}) {
     const artistas = creadoresFiltrados.filter(creador => creador.rol === 'Artista');
     const investigadores = creadoresFiltrados.filter(creador => creador.rol === 'Investigador');
     const curadores = creadoresFiltrados.filter(creador => creador.rol === 'Curador');
-
-
-    //TODO CUANDO PULSO PARA SALAS EL RESULTADO QUEDA DETRAS DE LA BARRA DE BUSQUEDA
+    const cambiaSala = (id) => setSala(id);
+    const onExploreClick = () => {}
 
     return(
         <div className={styles.busqueda}>
@@ -29,7 +29,7 @@ function Menu_busqueda({onCreadorClick}) {
                 }
             </div>
             <div className={styles.tiposbusqueda}> 
-                {currentPage == 'busqueda_salas' ? <div> Salas </div> : 
+                {currentPage == 'busqueda_nombres' ? 
                     <div className={styles.listacreadores}>
                         <div>
                             <p className={styles.creador}>Artistas</p>
@@ -60,7 +60,52 @@ function Menu_busqueda({onCreadorClick}) {
                                 </ul>
                             </div>
                         </div>
+                    </div> :
+                    <div className={styles.listasalas}>
+                    {isSideMenu ? 
+                        <div className={styles.listasalamenu}>
+                            <div className={styles.salas}>
+                                {salas.map(item => 
+                                    <div 
+                                        onClick={() => cambiaSala(item)} 
+                                        id={sala.id == item.id ? styles.selected : void 0}
+                                        className={styles.sala}>
+                                        <p>{'Sala' + ' ' + item.id}</p>
+                                    </div>)
+                                }
+                            </div>
+                            <div className={styles.salatexto}>
+                                <p>{sala.texto}</p>
+                            </div>
+                            <div className={styles.button}><nav onClick={onExploreClick}><ul><li>Iniciar<span></span></li></ul></nav></div>
+                        </div>
+                     :
+                        <div className={styles.listasalasexploracion}>
+                            <div className={styles.upper}>
+                                <div className={styles.cuadrado}>
+                                    <p>SALA 1</p>
+                                    <p id={styles.detalles}>{salas[0].texto}</p>
+                                </div>
+                                <div className={styles.cuadradoinv}>
+                                    <p id={styles.pinv}>SALA 2</p>
+                                    <p id={styles.detalles}>{salas[1].texto}</p>
+                                </div>
+                                <div className={styles.cuadrado}>
+                                    <p>SALA 3</p>
+                                    <p id={styles.detalles}>{salas[2].texto}</p>
+                                </div>
+                                <div className={styles.cuadradoinv}>
+                                    <p id={styles.pinv}>SALA 4</p>
+                                    <p id={styles.detalles}>{salas[3].texto}</p>
+                                </div>
+                            </div>
+                                <div className={styles.cuadradobase}>
+                                    <p>SALA 5</p>
+                                    <p id={styles.detalles}>{salas[4].texto}</p>
+                                </div>
                     </div>}
+                        </div>}
+                        
             </div>
         </div>
     );

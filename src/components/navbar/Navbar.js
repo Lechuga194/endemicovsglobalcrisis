@@ -9,6 +9,7 @@ function Navbar({redirect}){
 
     const [showMenu, setShowMenu] = useState(false);
     const showSideBar = () => setShowMenu(!showMenu);
+    const onCreadorClick = () => {}
 
     return(
         showMenu ? 
@@ -19,7 +20,7 @@ function Navbar({redirect}){
                     <h3>Endémico vs Global: Crisis</h3>
                     <img src={menu} onClick={showSideBar}></img>
                 </div>
-                <Menu_busqueda />
+                <Menu_busqueda onCreadorClick={onCreadorClick} isSideMenu={true} />
             </nav> : 
             <nav className={styles.smallnavbar}>
                 <img src={back} onClick={redirect}></img>

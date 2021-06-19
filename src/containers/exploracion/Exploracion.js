@@ -15,7 +15,7 @@ function Exploracion() {
         pais: 'Mexicano'
 
     }); //TODO POR DEFECTO NULL
-    const [currentPage, setCurrentPage] = useState('') //TODO por defecto debe ser exploracion
+    const [currentPage, setCurrentPage] = useState('exploracion') //TODO por defecto debe ser exploracion
     
     const onCreadorClick = (creadorSeleccionado) => {
         if(creadorSeleccionado != null){
@@ -33,7 +33,7 @@ function Exploracion() {
         <>
             {currentPage === 'exploracion' ? 
             <div className={styles.exploracion}>
-                <div id={styles.menuexploracion}><Menu_busqueda onCreadorClick={onCreadorClick}/></div>
+                <div id={styles.menuexploracion}><Menu_busqueda onCreadorClick={onCreadorClick} isSideMenu={false}/></div>
                 <div className={styles.contenido}>
                     <img src={exploracion_img} alt="exploracion_img"></img>
                     <div className={styles.button}><nav onClick={onExploreClick}><ul><li>Iniciar<span></span></li></ul></nav></div>
