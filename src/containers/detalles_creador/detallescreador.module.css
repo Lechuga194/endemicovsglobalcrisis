@@ -32,14 +32,18 @@
     z-index: 1;
     position: relative;
     margin: 50px 10% 0px 5%;
-    background-color: rebeccapurple;
+    
 }
 
 .elementofcarousel img{
-    width: 300px;
-    height: 300px;
-    object-fit: cover;
+    height: 65vh;
+    object-fit: scale-down;
 }
+
+/* .elementofcarousel img{
+    height: 65vh;
+    object-fit: cover;
+} */
 
 /***************************VER MAS*/
 
