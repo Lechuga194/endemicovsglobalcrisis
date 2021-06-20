@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import Menu_busqueda from '../../containers/menu_busqueda/Menu_busqueda'
+import Menu_busqueda from '../menu_busqueda/Menu_busqueda'
 import back from '../../static/navbar/back.jpg'
 import home from '../../static/navbar/home.jpg'
 import menu from '../../static/navbar/menu.jpg'

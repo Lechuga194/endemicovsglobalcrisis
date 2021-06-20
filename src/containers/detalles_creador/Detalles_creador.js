@@ -1,21 +1,31 @@
 import React, {useState, useEffect} from 'react';
 import { Carousel } from 'react-responsive-carousel';
-import Navbar from '../../components/navbar/Navbar';
+import Navbar from '../../containers/navbar/Navbar';
 import ShowMoreText from 'react-show-more-text';
+import Obra from '../obra/Obra'
 import {texto, listofimages} from './utils'
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import styles from './detallescreador.module.css'
 
 function Detalles_creador({goHome, goBack, creador}){
 
-    const [currentCreador, setCurrentCreador] = useState(creador)
+    const [currentCreador, setCurrentCreador] = useState(creador);
+    const [selectedObra, setSelectedObra] = useState(null);
+    const [currentPage, setCurrentPage] = useState('detalles_creador'); 
 
-    const changeCreador = (newCreador) => setCurrentCreador(newCreador)
-    const executeOnClick = (isExpanded) => console.log(isExpanded);
-    const onClickImage = (id) =>{console.log(id)}
+    const changeCreador = (newCreador) => {
+        setCurrentCreador(newCreador)
+        setCurrentPage('detalles_creador')
+    }
+    const onClickImage = (obraID) => {
+        setSelectedObra(listofimages[obraID])
+        setCurrentPage('obra')
+    }
+    const goBackDetalles = () => setCurrentPage('detalles_creador')
 
     return(
-        <div className={styles.container}>
+        currentPage == 'detalles_creador' ? 
+            <div className={styles.container}>
             <div><Navbar goHome={goHome} goBack={goBack} changeCreador={changeCreador}/></div>
             {
                 currentCreador.rol == 'Artista' ? 
@@ -42,12 +52,13 @@ function Detalles_creador({goHome, goBack, creador}){
                                 stopOnHover
                                 swipeable
                                 useKeyboardArrows
+                                onClickItem={onClickImage}
                                 width='100%'>
                                 {
                                     listofimages.map((image, i) => {
                                         return(
                                             <div key={i} className={styles.elementofcarousel}>
-                                                <img src={image.src} onClick={() => onClickImage(image.i)}/> 
+                                                <img src={image.src}/> 
                                             </div>
                                         );
                                     }) 
@@ -82,6 +93,11 @@ function Detalles_creador({goHome, goBack, creador}){
                     </div>
                 </div>
             }
+        </div>
+        :
+        <div className={styles.container}>
+            <div><Navbar goHome={goHome} goBack={goBackDetalles} changeCreador={changeCreador}/></div>
+            <div><Obra creador={currentCreador} obra={selectedObra}/></div>
         </div>
     );
 
