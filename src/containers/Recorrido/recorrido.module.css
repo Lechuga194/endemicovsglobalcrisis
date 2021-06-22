@@ -1,0 +1,26 @@
+.container{
+    display: grid;
+    grid-template-columns: 60px auto;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+/***************************VER MAS*/
+
+.componentevermas {
+    text-align: justify;
+    width: auto;
+}
+
+.componentevermasancho {
+    text-decoration: none;
+    color:rgb(189, 22, 22);
+}
+
+.componentevermasancho a:hover { text-decoration: none; color:rgb(189, 22, 22); }
+.componentevermasancho a:focus { text-decoration: none; color:rgb(189, 22, 22); }
+.componentevermasancho a:active { text-decoration: none; color:rgb(189, 22, 22); }
+
+
+/************************************/
