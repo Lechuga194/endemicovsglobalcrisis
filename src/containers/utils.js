@@ -114,6 +114,30 @@ const obras = [
         },
     },
     {
+        id_obra : 2,
+        id_creador: 7,
+        tipo : 'imagen',
+        contenido: {
+            titulo: 'Titulo1',
+            tecnica: 'Tecnica1',
+            textos : [
+                {
+                    tipo: 'Semblanza',
+                    cuerpo: texto
+                },
+                {
+                    tipo: 'Descripcion',
+                    cuerpo: texto,
+                },
+                {
+                    tipo: 'Prueba',
+                    cuerpo: 'OWO22222',
+                }
+            ],
+            src: 'https://i.pinimg.com/originals/09/4e/8e/094e8eb6fc8103553b7fd1ef3d474b8f.jpg'
+        },
+    },
+    {
         id_obra : 1,
         id_creador: 4,
         tipo : 'texto',
