@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import Menu_busqueda from '../menu_busqueda/Menu_busqueda'
 import Detalles_creador from '../detalles_creador/Detalles_creador'
 import Recorrido from '../Recorrido/Recorrido'
-import listarecorrido from './utils'
+import {recorrido_completo} from '../utils'
 import exploracion_img from '../../static/exploracion.jpg'
 import styles from './exploracion.module.css'
 
@@ -16,14 +16,10 @@ function Exploracion({goHome}) {
     const onExploreClick = () => setCurrentPage('recorrido_completo')
     const onCreadorClick = (creadorSeleccionado) => {
         if(creadorSeleccionado != null){
-            console.log(creadorSeleccionado)
             setCreador(creadorSeleccionado);
             setCurrentPage('detalles_creador');
         }
     };
-    // const onCreadorChangeFromMenu = () => {
-
-    // }
 
     return(
         <>
@@ -36,7 +32,7 @@ function Exploracion({goHome}) {
                 </div>
             </div> : 
                 currentPage == 'recorrido_completo' ? 
-                    <Recorrido goHome={goHome} goBack={goBack} recorrido={listarecorrido} onCreadorClick={onCreadorClick}/>
+                    <Recorrido goHome={goHome} goBack={goBack} recorrido={recorrido_completo} onCreadorClick={onCreadorClick}/>
                 :
                     <Detalles_creador goHome={goHome} goBack={goBack} creador={creador}/>}
         </>

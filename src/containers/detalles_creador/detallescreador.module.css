@@ -28,22 +28,17 @@
 /****************CAROUSEL***********/
 
 .carousel{
-    margin-top: 50px;
     z-index: 1;
     position: relative;
     margin: 50px 10% 0px 5%;
-    
+    cursor: pointer;
 }
 
 .elementofcarousel img{
-    height: 65vh;
+    height: 60vh;
     object-fit: scale-down;
 }
 
-/* .elementofcarousel img{
-    height: 65vh;
-    object-fit: cover;
-} */
 
 /***************************VER MAS*/
 

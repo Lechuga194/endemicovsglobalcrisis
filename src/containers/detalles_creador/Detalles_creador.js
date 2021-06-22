@@ -3,7 +3,7 @@ import { Carousel } from 'react-responsive-carousel';
 import Navbar from '../../containers/navbar/Navbar';
 import ShowMoreText from 'react-show-more-text';
 import Obra from '../obra/Obra'
-import {texto, listofimages} from './utils'
+import {obras} from '../utils'
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import styles from './detallescreador.module.css'
 
@@ -11,16 +11,19 @@ function Detalles_creador({goHome, goBack, creador}){
 
     const [currentCreador, setCurrentCreador] = useState(creador);
     const [selectedObra, setSelectedObra] = useState(null);
-    const [currentPage, setCurrentPage] = useState('detalles_creador'); 
+    const [currentPage, setCurrentPage] = useState('detalles_creador');
 
     const changeCreador = (newCreador) => {
         setCurrentCreador(newCreador)
         setCurrentPage('detalles_creador')
     }
-    const onClickImage = (obraID) => {
-        setSelectedObra(listofimages[obraID])
+    const onClickImage = (obra) => {
+        setSelectedObra(obra)
         setCurrentPage('obra')
     }
+    const currentObras = obras.filter((obra, i) => {
+        return obra.id_creador == currentCreador.id;
+    })
     const goBackDetalles = () => setCurrentPage('detalles_creador')
 
     return(
@@ -41,29 +44,30 @@ function Detalles_creador({goHome, goBack, creador}){
                                 anchorClass={styles.componentevermasancho}
                                 expanded={false}
                                 width={0}
-                            >{texto}</ShowMoreText>
+                            >{currentCreador.biografia}</ShowMoreText>
                         </div>
                         <div className={styles.carousel}>
-                            <Carousel 
-                                autoPlay
-                                emulateTouch
-                                infiniteLoop
-                                showThumbs={false}
-                                stopOnHover
-                                swipeable
-                                useKeyboardArrows
-                                onClickItem={onClickImage}
-                                width='100%'>
-                                {
-                                    listofimages.map((image, i) => {
-                                        return(
-                                            <div key={i} className={styles.elementofcarousel}>
-                                                <img src={image.src}/> 
-                                            </div>
-                                        );
-                                    }) 
-                                }
-                            </Carousel>
+                            {currentObras.length <= 0 ? <div>No hay obras para mostrar</div> :
+                                <Carousel 
+                                    autoPlay
+                                    emulateTouch
+                                    infiniteLoop
+                                    showThumbs={false}
+                                    stopOnHover
+                                    swipeable
+                                    useKeyboardArrows
+                                    width='100%'>
+                                    {
+                                        currentObras.map((obra, i) => {
+                                            return (
+                                                <div key={i} className={styles.elementofcarousel} onClick={() => onClickImage(obra)}>
+                                                    <img src={obra.contenido.src}/> 
+                                                </div>
+                                            );
+                                        })
+                                    }
+                                </Carousel>
+                            }
                         </div>
                     </div> 
                 : 
@@ -79,17 +83,21 @@ function Detalles_creador({goHome, goBack, creador}){
                             anchorClass={styles.componentevermasancho}
                             expanded={false}
                             width={0}
-                        >{texto}</ShowMoreText>
+                        >{currentCreador.biografia}</ShowMoreText>
+                        {currentObras.length <= 0 ? <div style={{marginTop: "50px"}}>No hay obras para mostrar</div> : 
                         <div className={styles.textos}>
                             {
-                                currentCreador.textos_investigacion != null ? 
-                                currentCreador.textos_investigacion.map(texto =>
-                                <div>
-                                    <p id={styles.textotitulo}>{texto.titulo}</p>
-                                    <p id={styles.textocuerpo}>{texto.texto}</p>
-                                </div>) : <div>No hay textos</div> //TODO modificar que pasa si no hay textos
+                                currentObras.map((obra, i) => {
+                                    console.log(obra)
+                                    return (
+                                        <div key={i}>
+                                            <p id={styles.textotitulo}>{obra.contenido.titulo}</p>
+                                            <p id={styles.textocuerpo}>{obra.contenido.texto}</p>
+                                        </div>
+                                    );
+                                })
                             }
-                        </div>
+                        </div>}
                     </div>
                 </div>
             }

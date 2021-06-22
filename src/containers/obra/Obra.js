@@ -3,8 +3,7 @@ import styles from './obra.module.css'
 import ShowMoreText from 'react-show-more-text';
 
 function Obra({creador, obra}){
-
-    const [textSelectet, setTextSelected] = useState(obra.textos[0])
+    const [textSelectet, setTextSelected] = useState(obra.contenido.textos[0])
     const [isImageSelected, setIsImageSelected] = useState(false)
     const [imageIsWider, setImageIsWider] = useState(false);
     
@@ -16,20 +15,20 @@ function Obra({creador, obra}){
         let isWider = (this.width > this.height);
         setImageIsWider(isWider);
     }
-    img.src = obra.src;
+    img.src = obra.contenido.src;
 
     return(
         obra.tipo == 'imagen' ? 
             !imageIsWider ? 
                 <div className={isImageSelected ? styles.containerFS : styles.container}>
                     <div className={isImageSelected ? styles.informacionHiiden :  styles.informacion}>
-                        <p id={styles.titulo}>{obra.titulo}</p>
+                        <p id={styles.titulo}>{obra.contenido.titulo}</p>
                         <p id={styles.datos}>{creador.nombre}/{creador.pais}</p>
-                        <p id={styles.tecnica}>{obra.tecnica}</p>
+                        <p id={styles.tecnica}>{obra.contenido.tecnica}</p>
                         <div className={styles.textos}>
                             <div className={styles.opcionesTexto}>
                                 {
-                                    obra.textos.map(texto =>
+                                    obra.contenido.textos.map(texto =>
                                         <div 
                                         className={styles.tipoTextoContainer}
                                         onClick={() => changeText(texto)}
@@ -53,21 +52,21 @@ function Obra({creador, obra}){
                         </div>
                     </div>
                     <div className={isImageSelected ? styles.obraFS : styles.obra}>
-                        <img src={obra.src} onClick={toFullScreen} ></img>
+                        <img src={obra.contenido.src} onClick={toFullScreen} ></img>
                     </div>
                 </div> : 
                     <div className={isImageSelected ? styles.containerFS : styles.container}>
                         <div className={isImageSelected ? styles.obraFS : styles.obra}>
-                            <img id={styles.wider} src={obra.src} onClick={toFullScreen} ></img>
+                            <img id={styles.wider} src={obra.contenido.src} onClick={toFullScreen} ></img>
                         </div>
                         <div className={isImageSelected ? styles.informacionHiiden :  styles.informacion}>
-                            <p id={styles.titulo}>{obra.titulo}</p>
+                            <p id={styles.titulo}>{obra.contenido.titulo}</p>
                             <p id={styles.datos}>{creador.nombre}/{creador.pais}</p>
-                            <p id={styles.tecnica}>{obra.tecnica}</p>
+                            <p id={styles.tecnica}>{obra.contenido.tecnica}</p>
                             <div className={styles.textos}>
                                 <div className={styles.opcionesTexto}>
                                     {
-                                        obra.textos.map(texto =>
+                                        obra.contenido.textos.map(texto =>
                                             <div 
                                             className={styles.tipoTextoContainer}
                                             onClick={() => changeText(texto)}

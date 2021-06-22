@@ -3,12 +3,10 @@ import Obra from '../obra/Obra'
 import Navbar from '../navbar/Navbar'
 import styles from './recorrido.module.css'
 import obras from './utils'
-import {listacreadores} from '../menu_busqueda/utils'
 
 //Aqui debo hacer la consulta a la bd segun el arreglo de recorrido
 
 function Recorrido({goHome, goBack, onCreadorClick ,recorrido}){
-    console.log(listacreadores)
     console.log(obras)
     console.log(recorrido)
 

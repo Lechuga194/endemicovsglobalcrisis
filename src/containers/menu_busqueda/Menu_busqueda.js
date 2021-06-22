@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import Searchbox from '../../components/searchbox/Searchbox'
-import {listacreadores, salas} from './utils'
+import {creadores, salas} from '../utils'
 import styles from './menu_busqueda.module.css'
 
 function Menu_busqueda({onCreadorClick, isSideMenu, changeCreador}) {
@@ -12,7 +12,7 @@ function Menu_busqueda({onCreadorClick, isSideMenu, changeCreador}) {
     const onButtonClick = (page) => setCurrentPage(page);
     const onChangeSearch = (event) => setSearch(event.target.value)
 
-    const creadoresFiltrados = listacreadores.filter(creador => creador.nombre.toLowerCase().includes(search.toLowerCase()))
+    const creadoresFiltrados = creadores.filter(creador => creador.nombre.toLowerCase().includes(search.toLowerCase()))
     const artistas = creadoresFiltrados.filter(creador => creador.rol === 'Artista');
     const investigadores = creadoresFiltrados.filter(creador => creador.rol === 'Investigador');
     const curadores = creadoresFiltrados.filter(creador => creador.rol === 'Curador');
