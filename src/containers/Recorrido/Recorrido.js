@@ -1,47 +1,46 @@
-import React from 'react'
-import Obra from '../obra/Obra'
+import React, {useState} from 'react'
 import Navbar from '../navbar/Navbar'
+import Obra from '../tipos_obra/Obra'
+import Investigacion from '../tipos_obra/Investigacion'
 import styles from './recorrido.module.css'
-import obras from './utils'
+import {creadores, obras} from '../utils'
 
 //Aqui debo hacer la consulta a la bd segun el arreglo de recorrido
 
 function Recorrido({goHome, goBack, onCreadorClick ,recorrido}){
-    console.log(obras)
-    console.log(recorrido)
+    
+    //Seleccion de creadorres y obras para el componente Obra
+    let obrasFiltradas = []
+    recorrido.forEach(item => {
+        const creador = creadores.find(creador => {
+            return creador.id == item.id_creador;
+        })
+        const obra = obras.find(obra => {
+            return creador.id == item.id_creador && item.id_obra == obra.id_obra;
+        })
+        obrasFiltradas.push([creador, obra]);
+    })
+
+    console.log(obrasFiltradas[0])
 
     return(
         <div className={styles.container}>
             <div><Navbar goHome={goHome} goBack={goBack} changeCreador={onCreadorClick}/></div>
             <div className={styles.containerobras}>
-                {/* {
-                    recorrido.map((obra, i) => {
+                {
+                    obrasFiltradas.map((obra, i) => {
                         return(
-                            <div className={styles.obra}>
-                                {
-                                    obras.map((obra, i) => {
-                                        return(
-                                            <div>
-                                                <Obra 
-                                                    creador={
-                                                        listacreadores.filter(creador => {
-                                                            return obras[i].id_creador == creador.id;
-                                                        })
-                                                    } 
-                                                    obra={
-                                                        obras.filter(obra => {
-                                                            return obras[i].id_obra
-                                                        })
-                                                    }
-                                                />
-                                            </div>
-                                        );
-                                    })
+                            <div key={i}>
+                                {obra[0].rol == 'Artista' ?
+                                    <Obra creador={obra[0]} obra={obra[1]}/>
+                                :
+                                    <Investigacion creador={obra[0]} obra={obra[1]}/>
                                 }
-                            </div>
+                            </div> 
+                            
                         );
                     })
-                } */}
+                }
             </div>
         </div>
     );

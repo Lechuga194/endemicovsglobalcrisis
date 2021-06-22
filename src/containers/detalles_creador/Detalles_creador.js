@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import { Carousel } from 'react-responsive-carousel';
 import Navbar from '../../containers/navbar/Navbar';
 import ShowMoreText from 'react-show-more-text';
-import Obra from '../obra/Obra'
+import Obra from '../tipos_obra/Obra'
 import {obras} from '../utils'
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import styles from './detallescreador.module.css'

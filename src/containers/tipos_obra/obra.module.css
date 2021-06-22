@@ -98,3 +98,35 @@
 .componentevermasancho a:hover { text-decoration: none; color:rgb(189, 22, 22); }
 .componentevermasancho a:focus { text-decoration: none; color:rgb(189, 22, 22); }
 .componentevermasancho a:active { text-decoration: none; color:rgb(189, 22, 22); }
+
+.datos{
+    margin: 30px;
+    width: 90%;
+}
+
+.datos h1 {
+    margin-bottom: 5px;
+}
+
+.datos h3 {
+    margin-bottom: 15px;
+}
+
+.textos{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin: 25px;
+}
+
+.textos #textotitulo{
+    margin-top: 25px;
+    font-size: 32px;
+    color:rgb(189, 22, 22);
+    font-weight: bolder;
+}
+
+.textos #textocuerpo{
+    margin-top: 15px;
+    font-size: 20px;
+}
