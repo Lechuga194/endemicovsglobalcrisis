@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/endemicovsglobalcrisis/static/css/main.644f8cd0.chunk.css",
+    "main.js": "/endemicovsglobalcrisis/static/js/main.42b13d19.chunk.js",
+    "main.js.map": "/endemicovsglobalcrisis/static/js/main.42b13d19.chunk.js.map",
+    "runtime-main.js": "/endemicovsglobalcrisis/static/js/runtime-main.9988f2fe.js",
+    "runtime-main.js.map": "/endemicovsglobalcrisis/static/js/runtime-main.9988f2fe.js.map",
+    "static/css/2.6b560088.chunk.css": "/endemicovsglobalcrisis/static/css/2.6b560088.chunk.css",
+    "static/js/2.046ef8f3.chunk.js": "/endemicovsglobalcrisis/static/js/2.046ef8f3.chunk.js",
+    "static/js/2.046ef8f3.chunk.js.map": "/endemicovsglobalcrisis/static/js/2.046ef8f3.chunk.js.map",
+    "index.html": "/endemicovsglobalcrisis/index.html",
+    "static/css/2.6b560088.chunk.css.map": "/endemicovsglobalcrisis/static/css/2.6b560088.chunk.css.map",
+    "static/css/main.644f8cd0.chunk.css.map": "/endemicovsglobalcrisis/static/css/main.644f8cd0.chunk.css.map",
+    "static/js/2.046ef8f3.chunk.js.LICENSE.txt": "/endemicovsglobalcrisis/static/js/2.046ef8f3.chunk.js.LICENSE.txt",
+    "static/media/exploracion.8dbdc1b2.jpg": "/endemicovsglobalcrisis/static/media/exploracion.8dbdc1b2.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.9988f2fe.js",
+    "static/css/2.6b560088.chunk.css",
+    "static/js/2.046ef8f3.chunk.js",
+    "static/css/main.644f8cd0.chunk.css",
+    "static/js/main.42b13d19.chunk.js"
+  ]
+}
