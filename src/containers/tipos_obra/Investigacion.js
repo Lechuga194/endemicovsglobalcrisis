@@ -20,16 +20,18 @@ function Investigacion({creador, obra}){
                 <div className={styles.textos}>
                     <div key={obra.id_obra}>
                         <p id={styles.textotitulo}>{obra.contenido.titulo}</p>
-                        <ShowMoreText
-                            id={styles.textocuerpo}
-                            lines={9}
-                            more='Ver más...'
-                            less='Ver menos...'
-                            className={styles.componentevermas}
-                            anchorClass={styles.componentevermasancho}
-                            expanded={false}
-                            width={0}
-                        >{obra.contenido.texto}</ShowMoreText>
+                        <div className={styles.textbox} id={styles.scrollbar}>
+                            <ShowMoreText
+                                id={styles.textocuerpo}
+                                lines={9}
+                                more='Ver más...'
+                                less='Ver menos...'
+                                className={styles.componentevermas}
+                                anchorClass={styles.componentevermasancho}
+                                expanded={false}
+                                width={0}
+                            >{obra.contenido.texto}</ShowMoreText>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -27,10 +27,6 @@
     justify-content: stretch;
 }
 
-.creador {
-    font-size: 32px;
-}
-
 
 .listacreadores p  {
     transition: transform .1s;
@@ -44,6 +40,10 @@
 
 .listacreadores ul {
     list-style-type:none;
+}
+
+.creador {
+    font-size: 32px;
 }
 
 /* SALA MENU **************************************/

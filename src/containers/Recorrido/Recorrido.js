@@ -7,11 +7,11 @@ import {creadores, obras} from '../utils'
 
 //Aqui debo hacer la consulta a la bd segun el arreglo de recorrido
 
-function Recorrido({goHome, goBack, onCreadorClick ,recorrido}){
+function Recorrido({goHome, goBack, onCreadorClick, onSalaClick, recorrido}){
     
     //Seleccion de creadorres y obras para el componente Obra
     let obrasFiltradas = []
-    recorrido.forEach(item => {
+    recorrido.obras.forEach(item => {
         const creador = creadores.find(creador => {
             return creador.id == item.id_creador;
         })
@@ -25,7 +25,7 @@ function Recorrido({goHome, goBack, onCreadorClick ,recorrido}){
 
     return(
         <div className={styles.container}>
-            <div><Navbar goHome={goHome} goBack={goBack} changeCreador={onCreadorClick}/></div>
+            <div><Navbar goHome={goHome} goBack={goBack} changeCreador={onCreadorClick} onSalaClick={onSalaClick}/></div>
             <div className={styles.containerobras}>
                 {
                     obrasFiltradas.map((obra, i) => {

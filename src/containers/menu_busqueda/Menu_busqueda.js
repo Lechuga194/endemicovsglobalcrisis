@@ -3,11 +3,12 @@ import Searchbox from '../../components/searchbox/Searchbox'
 import {creadores, salas} from '../utils'
 import styles from './menu_busqueda.module.css'
 
-function Menu_busqueda({onCreadorClick, isSideMenu, changeCreador}) {
+function Menu_busqueda({onCreadorClick, isSideMenu, changeCreador, onSalaClick}) {
 
     const [search, setSearch] = useState('')
     const [currentPage, setCurrentPage] = useState('busqueda_nombres') //TODO POR DEFECTO DEBE SER NOMBRES
-    const [sala, setSala] = useState(salas[0])
+    const [selectedSala, setSelectedSala] = useState(salas[0])
+    const [sala, setSala] = useState(null)
 
     const onButtonClick = (page) => setCurrentPage(page);
     const onChangeSearch = (event) => setSearch(event.target.value)
@@ -16,8 +17,8 @@ function Menu_busqueda({onCreadorClick, isSideMenu, changeCreador}) {
     const artistas = creadoresFiltrados.filter(creador => creador.rol === 'Artista');
     const investigadores = creadoresFiltrados.filter(creador => creador.rol === 'Investigador');
     const curadores = creadoresFiltrados.filter(creador => creador.rol === 'Curador');
-    const cambiaSala = (id) => setSala(id);
-    const onExploreClick = () => {}
+    const resaltarSala = (sala) => setSelectedSala(sala);
+    const cargaSala = (sala) => {onSalaClick(sala)}
 
     return(
         <div className={styles.busqueda}>
@@ -81,41 +82,41 @@ function Menu_busqueda({onCreadorClick, isSideMenu, changeCreador}) {
                     {isSideMenu ? 
                         <div className={styles.listasalamenu}>
                             <div className={styles.salas}>
-                                {salas.map(item => 
+                                {salas.map(sala => 
                                     <div 
-                                        onClick={() => cambiaSala(item)} 
-                                        id={sala.id == item.id ? styles.selected : void 0}
+                                        onClick={() => resaltarSala(sala)} 
+                                        id={selectedSala.id == sala.id ? styles.selected : void 0}
                                         className={styles.sala}>
-                                        <p>{'Sala' + ' ' + item.id}</p>
+                                        <p>{'Sala' + ' ' + sala.id}</p>
                                     </div>)
                                 }
                             </div>
                             <div className={styles.salatexto}>
-                                <p>{sala.texto}</p>
+                                <p>{selectedSala.texto}</p>
                             </div>
-                            <div className={styles.button}><nav onClick={onExploreClick}><ul><li>Iniciar<span></span></li></ul></nav></div>
+                            <div className={styles.button} onClick={() => onSalaClick(selectedSala)}><nav><ul><li>Iniciar<span></span></li></ul></nav></div>
                         </div>
                      :
                         <div className={styles.listasalasexploracion}>
                             <div className={styles.upper}>
-                                <div className={styles.cuadrado}>
+                                <div className={styles.cuadrado} onClick={() => cargaSala(salas[0])}>
                                     <p>SALA 1</p>
                                     <p id={styles.detalles}>{salas[0].texto}</p>
                                 </div>
-                                <div className={styles.cuadradoinv}>
+                                <div className={styles.cuadradoinv} onClick={() => cargaSala(salas[1])} >
                                     <p id={styles.pinv}>SALA 2</p>
                                     <p id={styles.detalles}>{salas[1].texto}</p>
                                 </div>
-                                <div className={styles.cuadrado}>
+                                <div className={styles.cuadrado} onClick={() => cargaSala(salas[2])}>
                                     <p>SALA 3</p>
                                     <p id={styles.detalles}>{salas[2].texto}</p>
                                 </div>
-                                <div className={styles.cuadradoinv}>
+                                <div className={styles.cuadradoinv} onClick={() => cargaSala(salas[3])}>
                                     <p id={styles.pinv}>SALA 4</p>
                                     <p id={styles.detalles}>{salas[3].texto}</p>
                                 </div>
                             </div>
-                                <div className={styles.cuadradobase}>
+                                <div className={styles.cuadradobase} onClick={() => cargaSala(salas[4])}>
                                     <p>SALA 5</p>
                                     <p id={styles.detalles}>{salas[4].texto}</p>
                                 </div>

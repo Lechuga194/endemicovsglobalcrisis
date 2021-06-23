@@ -170,44 +170,76 @@ const obras = [
 const salas = [
     {
         id: 1,
-        texto: 'ANALISIS SEMÁNTICO DE "CRISIS" EXPLORACIÓN DEL CONCEPTO DESDE DISTINTAS DISCIPLINAS. MENCIONAN (DE MANERA MÁS EXPLÍCITA) EL POTENCIAL DE CAMBIO EN LAS CRISIS'
+        texto: 'ANALISIS SEMÁNTICO DE "CRISIS" EXPLORACIÓN DEL CONCEPTO DESDE DISTINTAS DISCIPLINAS. MENCIONAN (DE MANERA MÁS EXPLÍCITA) EL POTENCIAL DE CAMBIO EN LAS CRISIS',
+        obras: [
+            {
+                id_creador: 0,
+                id_obra: 1 
+            },
+        ]
     },{
         id: 2,
-        texto: 'LA CRISIS COMO UNA PROPIEDAD DE LA FÍSICA. SE ANALIZA A PARTIR DEL DETERIORO, LAS TRANSICIONES Y SU EFECTO EN LOS SISTEMAS'
+        texto: 'LA CRISIS COMO UNA PROPIEDAD DE LA FÍSICA. SE ANALIZA A PARTIR DEL DETERIORO, LAS TRANSICIONES Y SU EFECTO EN LOS SISTEMAS',
+        obras: [
+            {
+                id_creador: 0,
+                id_obra: 1 
+            },
+        ]
     },{
         id: 3,
-        texto: 'ANÁLISIS SOCIOLÓGICO DE LA CRISIS. CRITICAS HACIA EL SISTEMA CAPITALISTA NEOLIBERAL (EL ORIGEN DE LAS CRISIS QUE SE VIVEN EN LA ACTUALIDAD)'
+        texto: 'ANÁLISIS SOCIOLÓGICO DE LA CRISIS. CRITICAS HACIA EL SISTEMA CAPITALISTA NEOLIBERAL (EL ORIGEN DE LAS CRISIS QUE SE VIVEN EN LA ACTUALIDAD)',
+        obras: [
+            {
+                id_creador: 0,
+                id_obra: 1 
+            },
+        ]
     },{
         id: 4,
-        texto: 'ANALISIS DEL CONCEPTO DE CRISIS A PARTIR DE SU INESTABILIDAD Y RELACIÓN CON FENOMENOS ANTROPOLÓGICOS (RELACIÓN SERES HUMANOS Y EL ENTORNO)'
+        texto: 'ANALISIS DEL CONCEPTO DE CRISIS A PARTIR DE SU INESTABILIDAD Y RELACIÓN CON FENOMENOS ANTROPOLÓGICOS (RELACIÓN SERES HUMANOS Y EL ENTORNO)',
+        obras: [
+            {
+                id_creador: 0,
+                id_obra: 1 
+            },
+        ]
     },{
         id: 5,
-        texto: 'TRABAJOS CURATORIALES PRESENTADOS COMO OBRAS'
+        texto: 'TRABAJOS CURATORIALES PRESENTADOS COMO OBRAS',
+        obras: [
+            {
+                id_creador: 0,
+                id_obra: 1 
+            },
+        ]
+    },{
+        id: 6,
+        texto: 'RECORRIDO COMPLETO',
+        obras: [
+            {
+                id_creador: 0,
+                id_obra: 1 
+            },
+            {
+                id_creador: 7,
+                id_obra: 6 
+            },
+            {
+                id_creador: 5,
+                id_obra: 4 
+            },
+            {
+                id_creador: 2,
+                id_obra: 1 
+            },
+            {
+                id_creador: 7,
+                id_obra: 6 
+            },
+        ]
     },
 ]
 
-const recorrido_completo = [
-    {
-        id_creador: 0,
-        id_obra: 1 
-    },
-    {
-        id_creador: 7,
-        id_obra: 6 
-    },
-    {
-        id_creador: 5,
-        id_obra: 4 
-    },
-    {
-        id_creador: 2,
-        id_obra: 1 
-    },
-    {
-        id_creador: 7,
-        id_obra: 6 
-    },
-]
 
-
-export {creadores, obras, salas, recorrido_completo}
+export {creadores, obras, salas}

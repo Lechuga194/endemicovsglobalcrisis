@@ -7,7 +7,7 @@ import {obras} from '../utils'
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import styles from './detallescreador.module.css'
 
-function Detalles_creador({goHome, goBack, creador}){
+function Detalles_creador({goHome, goBack, creador, onSalaClick}){
 
     const [currentCreador, setCurrentCreador] = useState(creador);
     const [selectedObra, setSelectedObra] = useState(null);
@@ -29,7 +29,7 @@ function Detalles_creador({goHome, goBack, creador}){
     return(
         currentPage == 'detalles_creador' ? 
             <div className={styles.container}>
-            <div><Navbar goHome={goHome} goBack={goBack} changeCreador={changeCreador}/></div>
+            <div><Navbar goHome={goHome} goBack={goBack} changeCreador={changeCreador} onSalaClick={onSalaClick}/></div>
             {
                 currentCreador.rol == 'Artista' ? 
                     <div>
@@ -104,7 +104,7 @@ function Detalles_creador({goHome, goBack, creador}){
         </div>
         :
         <div className={styles.container}>
-            <div><Navbar goHome={goHome} goBack={goBackDetalles} changeCreador={changeCreador}/></div>
+            <div><Navbar goHome={goHome} goBack={goBackDetalles} changeCreador={changeCreador} onSalaClick={onSalaClick}/></div>
             <div><Obra creador={currentCreador} obra={selectedObra}/></div>
         </div>
     );
