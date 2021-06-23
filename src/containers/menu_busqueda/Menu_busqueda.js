@@ -1,29 +1,38 @@
 import React, {useState, useEffect} from 'react';
 import Searchbox from '../../components/searchbox/Searchbox'
-import {creadores, salas} from '../utils'
+import {salas} from '../utils'
 import styles from './menu_busqueda.module.css'
 
 function Menu_busqueda({onCreadorClick, isSideMenu, changeCreador, onSalaClick}) {
-
-    const getCreadores = () => {
-        fetch('http://localhost:3001/getCreadoresNombre')
-        .then(response => response.json())
-    }
 
     const [search, setSearch] = useState('')
     const [currentPage, setCurrentPage] = useState('busqueda_nombres')
     const [selectedSala, setSelectedSala] = useState(salas[0])
     const [sala, setSala] = useState(null)
+    
+    //BD
+    const [creadores, setCreadores] = useState([]);
+    
+    useEffect(() => {
+        fetch('http://localhost:3001/getCreadoresNombre')
+            .then(data => data.json())
+            .then(creadores => {
+                console.log(creadores)
+                setCreadores(creadores)
+            })
+    }, []);
 
     const onButtonClick = (page) => setCurrentPage(page);
     const onChangeSearch = (event) => setSearch(event.target.value)
+    const resaltarSala = (sala) => setSelectedSala(sala);
+    const cargaSala = (sala) => {onSalaClick(sala)}
 
+    //Funciones para filtrar la busqueda
     const creadoresFiltrados = creadores.filter(creador => creador.nombre.toLowerCase().includes(search.toLowerCase()))
     const artistas = creadoresFiltrados.filter(creador => creador.rol === 'Artista');
     const investigadores = creadoresFiltrados.filter(creador => creador.rol === 'Investigador');
     const curadores = creadoresFiltrados.filter(creador => creador.rol === 'Curador');
-    const resaltarSala = (sala) => setSelectedSala(sala);
-    const cargaSala = (sala) => {onSalaClick(sala)}
+    
 
     return(
         <div className={styles.busqueda}>
@@ -45,12 +54,12 @@ function Menu_busqueda({onCreadorClick, isSideMenu, changeCreador, onSalaClick})
                                         isSideMenu ? 
                                         <li>{artistas.map(creador => 
                                             <p key={creador.id} onClick={() => changeCreador(creador)}>
-                                                {creador.id} {creador.nombre} {creador.obras}</p>)}
+                                                {creador.nombre}</p>)}
                                         </li>
                                         : 
                                         <li>{artistas.map(creador => 
                                             <p key={creador.id} onClick={() => onCreadorClick(creador)}>
-                                                {creador.id} {creador.nombre} {creador.obras}</p>)}
+                                                {creador.nombre}</p>)}
                                         </li>
                                     }
                                 </ul>
@@ -65,22 +74,22 @@ function Menu_busqueda({onCreadorClick, isSideMenu, changeCreador, onSalaClick})
                                         isSideMenu ? 
                                         investigadores.map(creador => 
                                             <p key={creador.id} onClick={() => changeCreador(creador)}>
-                                                {creador.id} {creador.nombre} {creador.obras}</p>)
+                                                {creador.nombre}</p>)
                                         :
                                         investigadores.map(creador => 
                                             <p key={creador.id} onClick={() => onCreadorClick(creador)}>
-                                                {creador.id} {creador.nombre} {creador.obras}</p>)
+                                                {creador.nombre}</p>)
                                     }
                                     </li>
                                 </ul>
                             </div>
-                            <div>
+                            {/* <div>
                             <p className={styles.creador}>Curadores</p>
                                 <ul>
                                     <li>{curadores.map(creador => 
                                         <p key={creador.id}>{creador.id} {creador.nombre}</p>)}</li>
                                 </ul>
-                            </div>
+                            </div> */}
                         </div>
                     </div> :
                     <div className={styles.listasalas}>
