@@ -10,7 +10,7 @@ import styles from './exploracion.module.css'
 function Exploracion({goHome}) {
 
     const [creador, setCreador] = useState(null);
-    const [currentPage, setCurrentPage] = useState('exploracion') //TODO por defecto debe ser exploracion
+    const [currentPage, setCurrentPage] = useState('exploracion')
     const [recorrido, setRecorrido] = useState(null)
     
     const goBack = () => setCurrentPage('exploracion') //Perdon por la forma tan warra de hacer routes, no tengo tiempo de aprender react router

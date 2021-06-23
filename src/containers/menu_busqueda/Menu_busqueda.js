@@ -5,8 +5,13 @@ import styles from './menu_busqueda.module.css'
 
 function Menu_busqueda({onCreadorClick, isSideMenu, changeCreador, onSalaClick}) {
 
+    const getCreadores = () => {
+        fetch('http://localhost:3001/getCreadoresNombre')
+        .then(response => response.json())
+    }
+
     const [search, setSearch] = useState('')
-    const [currentPage, setCurrentPage] = useState('busqueda_nombres') //TODO POR DEFECTO DEBE SER NOMBRES
+    const [currentPage, setCurrentPage] = useState('busqueda_nombres')
     const [selectedSala, setSelectedSala] = useState(salas[0])
     const [sala, setSala] = useState(null)
 
