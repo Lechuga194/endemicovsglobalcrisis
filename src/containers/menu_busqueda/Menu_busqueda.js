@@ -14,7 +14,7 @@ function Menu_busqueda({onCreadorClick, isSideMenu, changeCreador, onSalaClick})
     const [creadores, setCreadores] = useState([]);
     
     useEffect(() => {
-        fetch('http://localhost:3001/getCreadoresNombre')
+        fetch('http://localhost:3001/getCreadores')
             .then(data => data.json())
             .then(creadores => {
                 console.log(creadores)

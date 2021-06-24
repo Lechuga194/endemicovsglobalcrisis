@@ -19,7 +19,7 @@ function Investigacion({creador, obra}){
                 >{creador.biografia}</ShowMoreText>
                 <div className={styles.textos}>
                     <div key={obra.id_obra}>
-                        <p id={styles.textotitulo}>{obra.contenido.titulo}</p>
+                        <p id={styles.textotitulo}>{obra.titulo}</p>
                         <div className={styles.textbox} id={styles.scrollbar}>
                             <ShowMoreText
                                 id={styles.textocuerpo}
@@ -30,7 +30,7 @@ function Investigacion({creador, obra}){
                                 anchorClass={styles.componentevermasancho}
                                 expanded={false}
                                 width={0}
-                            >{obra.contenido.texto}</ShowMoreText>
+                            >{obra.investigacion.texto}</ShowMoreText>
                         </div>
                     </div>
                 </div>

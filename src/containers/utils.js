@@ -1,62 +1,6 @@
 const texto = "Proident aliquip nulla aute cillum et deserunt veniam. Dolore irure elit adipisicing amet nulla ut deserunt cillum. Tempor proident irure consequat excepteur eu consectetur do cillum. Lorem voluptate adipisicing veniam id eu. Culpa incididunt excepteur aliqua consequat labore pariatur culpa do id. Incididunt id exercitation elit dolor velit aliqua magna sunt excepteur do irure velit officia dolor. Incididunt consequat magna tempor sunt veniam nisi occaecat laborum ut nisi pariatur. Reprehenderit cillum incididunt elit voluptate. Consectetur reprehenderit velit pariatur veniam magna culpa. Irure occaecat non tempor et cupidatat commodo duis nulla magna nostrud sunt ea in. Culpa sunt do culpa do minim sit pariatur.";
 const texto_investigacion = 'Veniam do esse eiusmod veniam deserunt ut voluptate ex cupidatat. Consequat tempor culpa sunt quis aliquip laboris ex tempor elit. Aliquip elit occaecat cillum dolor labore est commodo magna excepteur laborum anim fugiat nisi ad. Eiusmod anim culpa duis mollit culpa labore. Incididunt tempor tempor proident do minim aute cupidatat sint eu ullamco consequat Lorem id eu. Occaecat sint esse ipsum pariatur exercitation minim sunt aute officia. Tempor veniam mollit officia amet duis laboris. Ea incididunt ea sunt officia laboris commodo laboris. Reprehenderit ex quis velit ullamco ullamco sunt elit dolore consequat. Tempor amet velit commodo reprehenderit reprehenderit non nisi incididunt Lorem eu dolor ipsum. Aute nostrud fugiat proident eu elit ad nostrud irure excepteur est cupidatat adipisicing ea in. Eu esse elit ex laborum eiusmod voluptate sint est. Culpa fugiat ex enim irure proident in sit cupidatat.'
 const textoExtremo = texto + texto + texto + texto + texto + texto + texto;
-
-const salas = [
-    {
-        id: 1,
-        texto: 'ANALISIS SEMÁNTICO DE "CRISIS" EXPLORACIÓN DEL CONCEPTO DESDE DISTINTAS DISCIPLINAS. MENCIONAN (DE MANERA MÁS EXPLÍCITA) EL POTENCIAL DE CAMBIO EN LAS CRISIS',
-        obras: [
-            {
-                id_creador: 0,
-                id_obra: 1 
-            },
-        ]
-    },{
-        id: 2,
-        texto: 'LA CRISIS COMO UNA PROPIEDAD DE LA FÍSICA. SE ANALIZA A PARTIR DEL DETERIORO, LAS TRANSICIONES Y SU EFECTO EN LOS SISTEMAS',
-        obras: [
-            {
-                id_creador: 0,
-                id_obra: 1 
-            },
-        ]
-    },{
-        id: 3,
-        texto: 'ANÁLISIS SOCIOLÓGICO DE LA CRISIS. CRITICAS HACIA EL SISTEMA CAPITALISTA NEOLIBERAL (EL ORIGEN DE LAS CRISIS QUE SE VIVEN EN LA ACTUALIDAD)',
-        obras: [
-            {
-                id_creador: 0,
-                id_obra: 1 
-            },
-        ]
-    },{
-        id: 4,
-        texto: 'ANALISIS DEL CONCEPTO DE CRISIS A PARTIR DE SU INESTABILIDAD Y RELACIÓN CON FENOMENOS ANTROPOLÓGICOS (RELACIÓN SERES HUMANOS Y EL ENTORNO)',
-        obras: [
-            {
-                id_creador: 0,
-                id_obra: 1 
-            },
-        ]
-    },{
-        id: 5,
-        texto: 'TRABAJOS CURATORIALES PRESENTADOS COMO OBRAS',
-        obras: [
-            {
-                id_creador: 0,
-                id_obra: 1 
-            },
-        ]
-    },{
-        id: 6,
-        texto: 'RECORRIDO COMPLETO',
-        obras: [
-            
-        ]
-    },
-]
-
 const creadores = [
     {
         id: 0,
@@ -120,16 +64,42 @@ const creadores = [
     },
 ]
 
+//POR SI RESULTA QUE TODOS LAS OBRAS TIENEN UN SOLO TEXTO
+// {
+//     id_obra : 2,
+//     id_creador: 1,
+//     tipo : 'imagen',
+//     titulo : 'Titulo1',
+//     texto: '',
+//     imagen: {
+//         src: 'https://images.unsplash.com/photo-1612040955893-6a995513b6a8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=938&q=80',
+//         tecnica: 'Tecnica1',
+//     },
+// },
+
 const obras = [
     {
         id_obra : 1,
         id_creador: 1,
         tipo : 'imagen',
         titulo : 'Titulo1',
+        textos : [
+            {
+                tipo: 'Descripción',
+                cuerpo: texto
+            },
+            {
+                tipo: 'Semblanza',
+                cuerpo: 'Semblanza...' + texto
+            },
+            {
+                tipo: 'Otro',
+                cuerpo: 'Hola! ' + texto
+            }
+        ],
         imagen: {
             src: 'https://images.unsplash.com/photo-1533591917057-a0b77b40de75?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8cHJpZGV8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
             tecnica: 'Tecnica1',
-            texto : texto,
         },
     },
     {
@@ -137,10 +107,15 @@ const obras = [
         id_creador: 1,
         tipo : 'imagen',
         titulo : 'Titulo1',
+        textos : [
+            {
+                tipo: 'Descripción',
+                cuerpo: texto
+            }
+        ],
         imagen: {
             src: 'https://images.unsplash.com/photo-1612040955893-6a995513b6a8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=938&q=80',
             tecnica: 'Tecnica1',
-            texto : texto,
         },
     },
     {
@@ -148,10 +123,15 @@ const obras = [
         id_creador: 1,
         tipo : 'imagen',
         titulo : 'Titulo1',
+        textos : [
+            {
+                tipo: 'Descripción',
+                cuerpo: texto
+            }
+        ],
         imagen: {
             src: 'https://images-na.ssl-images-amazon.com/images/I/81KWYrlOt7L._AC_SL1254_.jpg',
             tecnica: 'Tecnica1',
-            texto : texto,
         },
     },
     {
@@ -159,45 +139,101 @@ const obras = [
         id_creador: 1,
         tipo : 'imagen',
         titulo : 'Titulo1',
+        textos : [
+            {
+                tipo: 'Descripción',
+                cuerpo: texto
+            }
+        ],
         imagen: {
             src: 'https://images.alphacoders.com/588/thumb-1920-588042.jpg',
             tecnica: 'Tecnica1',
-            texto : texto,
         },
     },
     {
         id_obra : 50,
         id_creador: 54,
         tipo : 'investigacion',
-        titulo : 'Titulo de investigacion',
+        titulo : 'Titulo de investigacion #1',
         investigacion: {
-            texto: texto_investigacion
+            texto: "Este texto de investigacion... " + texto_investigacion
         },
     },
     {
-        id_obra : 2,
+        id_obra : 51,
         id_creador: 2,
         tipo : 'video',
         titulo : 'Titulo1',
+        textos : [
+            {
+                tipo: 'Descripción',
+                cuerpo: texto
+            }
+        ],
         video: {
             src: 'https://www.youtube.com/embed/tIOBLlehkpA',
             tecnica: 'Tecnica1',
-            texto : texto,
         },
     },
     {
-        id_obra : 2,
+        id_obra : 52,
         id_creador: 2,
         tipo : 'video',
         titulo : 'Titulo1',
+        textos : [
+            {
+                tipo: 'Descripción',
+                cuerpo: texto
+            }
+        ],
         video: {
             src: 'https://www.youtube.com/embed/hcZuvvtkN9k',
             tecnica: 'Tecnica1',
-            texto : texto,
         },
     },
     
 ]
+
+const salas = [
+    {
+        id: 1,
+        texto: 'ANALISIS SEMÁNTICO DE "CRISIS" EXPLORACIÓN DEL CONCEPTO DESDE DISTINTAS DISCIPLINAS. MENCIONAN (DE MANERA MÁS EXPLÍCITA) EL POTENCIAL DE CAMBIO EN LAS CRISIS',
+        obras: [
+            1,2
+        ]
+    },{
+        id: 2,
+        texto: 'LA CRISIS COMO UNA PROPIEDAD DE LA FÍSICA. SE ANALIZA A PARTIR DEL DETERIORO, LAS TRANSICIONES Y SU EFECTO EN LOS SISTEMAS',
+        obras: [
+            1,2
+        ]
+    },{
+        id: 3,
+        texto: 'ANÁLISIS SOCIOLÓGICO DE LA CRISIS. CRITICAS HACIA EL SISTEMA CAPITALISTA NEOLIBERAL (EL ORIGEN DE LAS CRISIS QUE SE VIVEN EN LA ACTUALIDAD)',
+        obras: [
+            1,2
+        ]
+    },{
+        id: 4,
+        texto: 'ANALISIS DEL CONCEPTO DE CRISIS A PARTIR DE SU INESTABILIDAD Y RELACIÓN CON FENOMENOS ANTROPOLÓGICOS (RELACIÓN SERES HUMANOS Y EL ENTORNO)',
+        obras: [
+            1,2
+        ]
+    },{
+        id: 5,
+        texto: 'TRABAJOS CURATORIALES PRESENTADOS COMO OBRAS',
+        obras: [
+            1,2
+        ]
+    },{
+        id: 6,
+        texto: 'RECORRIDO COMPLETO',
+        obras: [
+            1,2,3,4,50,51,52
+        ]
+    },
+]
+
 
 
 
