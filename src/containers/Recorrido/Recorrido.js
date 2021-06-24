@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import Navbar from '../navbar/Navbar'
-import Imagen from '../tipos_obra_recorrido/Imagen'
+import ObraArtistica from '../tipos_obra_recorrido/ObraArtistica'
 import Investigacion from '../tipos_obra_recorrido/Investigacion'
 import styles from './recorrido.module.css'
 import {obras} from '../utils'
@@ -36,7 +36,7 @@ function Recorrido({goHome, goBack, onCreadorClick, onSalaClick, recorrido}){
                         return(
                             <div key={i}>
                                 {creadoryobra[0].rol === 'Artista' ?
-                                    <Imagen creadoryobra={creadoryobra}/>
+                                    <ObraArtistica creadoryobra={creadoryobra}/>
                                 :
                                     <Investigacion creadoryobra={creadoryobra}/>
                                 }

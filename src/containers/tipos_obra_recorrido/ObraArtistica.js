@@ -3,7 +3,7 @@ import styles from './obra.module.css'
 import ShowMoreText from 'react-show-more-text';
 import { Carousel } from 'react-responsive-carousel';
 
-function Imagen({creadoryobra}){
+function ObraArtistica({creadoryobra}){
 
     const creador = creadoryobra[0];
     const obras = creadoryobra[1];
@@ -125,5 +125,5 @@ function Imagen({creadoryobra}){
     );
 }
 
-export default Imagen;
+export default ObraArtistica;
 
