@@ -23,7 +23,7 @@ function Imagen({creador, obra}){
             <div className={isImageSelected ? styles.containerFS : styles.container}>
                 <div className={isImageSelected ? styles.informacionHiiden :  styles.informacion}>
                     <p id={styles.titulo}>{obra.titulo}</p>
-                    <p id={styles.datos}>{creador.nombre}/{creador.pais}</p>
+                    <p id={styles.datos}>{creador.nombre} / {creador.pais}</p>
                     <p id={styles.tecnica}>{obra.imagen.tecnica}</p>
                     <div className={styles.textos}>
                         <div className={styles.opcionesTexto}>

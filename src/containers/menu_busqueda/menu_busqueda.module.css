@@ -9,7 +9,6 @@
     display: grid;
     grid-template-columns: 50% 50%;
     grid-column-gap: 15px;
-    margin-bottom: 10px;
 }
 
 .nav a {
@@ -81,7 +80,6 @@
 /* SALA MENU **************************************/
 
 .listasalamenu {
-    margin-top: 7%;
     display: grid;
     grid-template-columns: auto;
     grid-template-rows: auto auto auto;

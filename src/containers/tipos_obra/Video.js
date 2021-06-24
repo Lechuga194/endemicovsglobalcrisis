@@ -12,7 +12,7 @@ function Imagen({creador, obra}){
             <div className={ styles.containerV}>
                 <div className={styles.informacion}>
                     <p id={styles.titulo}>{obra.titulo}</p>
-                    <p id={styles.datos}>{creador.nombre}/{creador.pais}</p>
+                    <p id={styles.datos}>{creador.nombre} / {creador.pais}</p>
                     <p id={styles.tecnica}>{obra.video.tecnica}</p>
                     <div className={styles.textos}>
                         <div className={styles.opcionesTexto}>

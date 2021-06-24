@@ -156,7 +156,7 @@ const obras = [
         tipo : 'investigacion',
         titulo : 'Titulo de investigacion #1',
         investigacion: {
-            texto: "Este texto de investigacion... " + texto_investigacion
+            texto: "Este texto de investigacion... " + texto_investigacion + textoExtremo
         },
     },
     {
@@ -197,7 +197,7 @@ const obras = [
 const salas = [
     {
         id: 1,
-        texto: 'ANALISIS SEMÁNTICO DE "CRISIS" EXPLORACIÓN DEL CONCEPTO DESDE DISTINTAS DISCIPLINAS. MENCIONAN (DE MANERA MÁS EXPLÍCITA) EL POTENCIAL DE CAMBIO EN LAS CRISIS',
+        texto: 'ANALISIS SEMÁNTICO DE "CRISIS" EXPLORACIÓN DEL CONCEPTO DESDE DISTINTAS DISCIPLINAS. MENCIONAN EL POTENCIAL DE CAMBIO EN LAS CRISIS',
         obras: [
             1,2
         ]
