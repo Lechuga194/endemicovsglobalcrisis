@@ -17,7 +17,6 @@ function Menu_busqueda({onCreadorClick, isSideMenu, changeCreador, onSalaClick})
         fetch('http://localhost:3001/getCreadores')
             .then(data => data.json())
             .then(creadores => {
-                console.log(creadores)
                 setCreadores(creadores)
             })
     }, []);

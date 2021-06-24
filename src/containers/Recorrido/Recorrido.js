@@ -1,58 +1,46 @@
 import React, {useState, useEffect} from 'react'
 import Navbar from '../navbar/Navbar'
-import Imagen from '../tipos_obra/Imagen'
-import Investigacion from '../tipos_obra/Investigacion'
-import Video from '../tipos_obra/Video'
+import Imagen from '../tipos_obra_recorrido/Imagen'
+import Investigacion from '../tipos_obra_recorrido/Investigacion'
 import styles from './recorrido.module.css'
-import {creadores, obras} from '../utils'
+import {obras} from '../utils'
 
 //Aqui debo hacer la consulta a la bd segun el arreglo de recorrido
 
 function Recorrido({goHome, goBack, onCreadorClick, onSalaClick, recorrido}){
-    const [currentObras, setCurrentObras] = useState([])
-
+    const [creadoryobras, setCreadorYObras] = useState([])
     useEffect(() => {
         fetch('http://localhost:3001/getCreadores')
             .then(data => data.json())
             .then(creadores => {
-            //Obtenemos las obras mediante el ID
-            let obrasFiltradas = []
-            recorrido.obras.forEach(element => {
-                const tmpObra = obras.find(obra => {
-                    return obra.id_obra === element
+                let creadoresFiltados = []
+                recorrido.creadores.forEach(creadorid => {
+                    const creadorTMP = creadores.find(creadorDB => {
+                        return creadorid === creadorDB.id;
+                    })
+                    const obrasTMP = obras.filter(obra => {
+                        return creadorTMP.id === obra.id_creador;
+                    })
+                    creadoresFiltados.push([creadorTMP, obrasTMP])
                 })
-                const tmpCreador = creadores.find(creador => {
-                    return creador.id === tmpObra.id_creador;
-                })
-                obrasFiltradas.push([tmpCreador, tmpObra]);
-            });
-            setCurrentObras(obrasFiltradas)
+                setCreadorYObras(creadoresFiltados);
             })
     }, []);
-
-    
-
-
-    //TODO Si voy a implementar lo del color representativo iria aqui
 
     return(
         <div className={styles.container}>
             <div><Navbar goHome={goHome} goBack={goBack} changeCreador={onCreadorClick} onSalaClick={onSalaClick}/></div>
             <div className={styles.containerobras}>
                 {
-                    currentObras.map((obra, i) => {
+                    creadoryobras.map((creadoryobra, i) => {
                         return(
                             <div key={i}>
-                                {obra[0].rol === 'Artista' ?
-                                    obra[1].tipo === 'imagen' ?
-                                        <Imagen creador={obra[0]} obra={obra[1]}/>
-                                        :
-                                        <Video creador={obra[0]} obra={obra[1]}/>
+                                {creadoryobra[0].rol === 'Artista' ?
+                                    <Imagen creadoryobra={creadoryobra}/>
                                 :
-                                    <Investigacion creador={obra[0]} obra={obra[1]}/>
+                                    <Investigacion creadoryobra={creadoryobra}/>
                                 }
                             </div> 
-                            
                         );
                     })
                 }

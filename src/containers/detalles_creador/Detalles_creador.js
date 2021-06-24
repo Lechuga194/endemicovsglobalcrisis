@@ -2,9 +2,9 @@ import React, {useState} from 'react';
 import { Carousel } from 'react-responsive-carousel';
 import Navbar from '../../containers/navbar/Navbar';
 import ShowMoreText from 'react-show-more-text';
-import Imagen from '../tipos_obra/Imagen'
-import Video from '../tipos_obra/Video'
-import Investigacion from '../tipos_obra/Investigacion'
+import Imagen from '../tipos_obra_detalles/Imagen'
+import Video from '../tipos_obra_detalles/Video'
+import Investigacion from '../tipos_obra_detalles/Investigacion'
 import {obras} from '../utils'
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import styles from './detallescreador.module.css'
