@@ -70,8 +70,8 @@
 
     .navbarmenu{
         grid-template-rows: 10% auto;
-        width: 100vw;
-        height: 500px;
+        width: 100%;
+        height: auto;
     }
 
 }

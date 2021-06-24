@@ -1,14 +1,15 @@
-.busqueda {
+.busqueda{
     display: grid;
-    grid-template-rows: 10% auto;
+    grid-template-rows: auto auto;
     margin: 5vh;
 }
 
-.nav {
+.nav{
     height: 5vh;
     display: grid;
-    grid-template-columns: 250px 150px;
+    grid-template-columns: 50% 50%;
     grid-column-gap: 15px;
+    margin-bottom: 10px;
 }
 
 .nav a {
@@ -20,31 +21,62 @@
 
 .listacreadores{
     display: grid;
-    margin-top: 5vh;
-    grid-template-columns: 50% 50%;
-    justify-items: start;
-    align-items: start;
-    justify-content: stretch;
+    grid-template-columns: 50% auto;
+    margin-top: 15px;
 }
-
 
 .listacreadores p  {
-    transition: transform .1s;
-    margin: 10px 0px 10px 0px;
+    transition: transform 1s;
+    margin: 5px 0px 5px 0px;
     cursor: pointer;
 }
-  
-.listacreadores p:hover, .nav a:hover  {
-    transform: scale(1.05);
+
+.listacreadores span{
+    font-size: 20px;
+    font-weight: bold;
 }
 
 .listacreadores ul {
     list-style-type:none;
 }
-
-.creador {
-    font-size: 32px;
+  
+.nav a:hover  {
+    transform: scale(1.1);
 }
+
+.textbox{
+    height: 75vh;
+    width: 85%;
+    border:none;
+    overflow:auto;
+}
+
+#scrollbar {
+	overflow-y: scroll;
+    scrollbar-width: none;
+}
+
+#scrollbar::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+	border-radius: 10px;
+	background-color: #000000;
+}
+
+#scrollbar::-webkit-scrollbar
+{
+	background-color: #000000;
+    display: none;
+    
+}
+
+#scrollbar::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: #D62929;
+}
+
 
 /* SALA MENU **************************************/
 
@@ -84,49 +116,29 @@
 
 .button{
     justify-self: center;
-}
+} 
 
-@media (max-width: 430px){
-    .listasalamenu {
-        row-gap: 10px;   
-    }
-    
-    .listasalamenu .salas .sala{
-        width: 50px;
-        height: 30px;
-        margin: 5px;
-    }
-    
-    #selected {
-        width: 70px;
-        height: 45px;
-        background:rgb(0, 0, 0);
-        border-radius: 25px;
-        color: white;
-    }
-    
-    .button{
-        justify-self: center;
-    }
-}
-
-/* SALAS *****************************************/
+/* SALAS (flor) *****************************************/
 
 .listasalasexploracion{
-    margin-top: 50px;
+    margin: 50px 0px 0px 100px;
     display: grid;
-    grid-template-columns: auto;
+    grid-template-columns: 500px;
     grid-template-rows: auto auto;
-    row-gap: 15px;
-    width: 500px;
+    width: 100%;
+    min-height: 0; 
+    min-width: 0; 
+    grid-gap: 10px;
 }
 
 .listasalasexploracion .upper {
     display: grid;
-    grid-template-columns: 300px 300px;
-    grid-template-rows: 50% auto;
-    column-gap: 10px;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto;
+    overflow: hidden;
+    min-width: 0; 
     row-gap: 10px;
+    column-gap: 10px;
 }
 
 .listasalasexploracion .cuadradobase{
@@ -135,18 +147,20 @@
     align-content: center;
     text-align: center;
     justify-self: center;
-    width: 250px;
+    width: 230px;
     height:120px;
     background:white;
     border-radius: 0 0 50px 50px;
     color: black;
     cursor: pointer;
+    overflow: hidden;  /* NEW */
+    min-width: 0;      /* NEW; needed for Firefox */
 }
 
 .listasalasexploracion .cuadrado{
     width:auto;
-    height:150px;
-    width: 300px;
+    width: 230px;
+    height:180px;
     background:white;
     border-radius: 0 50px 0 50px;
     color: black;
@@ -155,8 +169,8 @@
 
 .listasalasexploracion .cuadradoinv{
     width:auto;
-    height:150px;
-    width: 300px;
+    width: 230px;
+    height:180px;
     background:white;
     border-radius: 50px 0 50px 0;
     color: black;
@@ -182,111 +196,7 @@
     color: white;
 }
 
-@media (max-width: 1200px){   
-    .listasalasexploracion .upper {
-        grid-template-columns: auto auto;
-    }
-    
-    .listasalasexploracion .cuadradobase{
-        width: calc(250px * .7);
-        height:calc(120px * .7);
-    }
-    
-    .listasalasexploracion .cuadradoinv, .listasalasexploracion .cuadrado{
-        height:120px;
-        width: 250px;
-    }
-    
-    .listasalasexploracion .cuadrado p, .listasalasexploracion .cuadradoinv p{
-        font-size: 12px;
-    }
-    
-    .listasalasexploracion .cuadradobase p{
-        font-size: 10px;
-    }
-
-}
-
-@media (max-width: 950px){   
-    .listasalasexploracion .upper {
-        grid-template-columns: auto auto;
-    }
-    
-    .listasalasexploracion .cuadradobase{
-        width: calc(250px * .7);
-        height:calc(120px * .7);
-    }
-    
-    .listasalasexploracion .cuadradoinv, .listasalasexploracion .cuadrado{
-        height:130px;
-        width: 200px;
-    }
-    
-    .listasalasexploracion .cuadrado p, .listasalasexploracion .cuadradoinv p{
-        font-size: 11px;
-    }
-    
-    .listasalasexploracion .cuadradobase p{
-        font-size: 10px;
-    }
-
-}
-
-@media (max-width: 850px){   
-    .listasalasexploracion .upper {
-        grid-template-columns: auto auto;
-    }
-    
-    .listasalasexploracion .cuadradobase{
-        width: calc(250px * .7);
-        height:calc(120px * .7);
-    }
-    
-    .listasalasexploracion .cuadradoinv, .listasalasexploracion .cuadrado{
-        height:120px;
-        width: 250px;
-    }
-    
-    .listasalasexploracion .cuadrado p, .listasalasexploracion .cuadradoinv p{
-        font-size: 12px;
-    }
-    
-    .listasalasexploracion .cuadradobase p{
-        font-size: 10px;
-    }
-
-}
-
-/* SALAS *****************************************/
-
-@media  (max-width: 800px) {
-    .nav {
-        grid-template-columns: 150px 150px;
-    }
-
-    .creador {
-        font-size: 18px;
-    }
-
-    .nav a{
-        font-size: 14px;
-    }
-
-} 
-
-@media  (max-width: 400px), (max-height:500px) {
-
-    .nav {
-        grid-template-columns: 50vw;
-        grid-template-rows: auto auto;
-        grid-row-gap: 10px;
-    }
-
-    .listacreadores{
-        grid-template-columns: auto;
-        grid-template-rows: auto auto;
-    }
-} 
+/************************************* SALAS (flor) *****************************************/
 
 .button nav ul {
     cursor: pointer;
@@ -351,3 +261,102 @@
 .button nav ul li span:nth-child(4) {
     --n: 4;
 }
+
+@media (max-width: 850px){
+    .listasalasexploracion{
+        margin: 50px 0px 0px 0px;
+    }
+}
+
+@media (max-width: 560px){   
+
+    .listacreadores p  {
+        font-size: 12px;
+    }
+    
+    .listacreadores span{
+        font-size: 16px;
+    }
+
+    .textbox{
+        height: 43vh;
+        width: 85%;
+        border:none;
+        overflow:auto;
+    }
+
+    .listasalasexploracion{
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: auto auto;
+        width: 100%;
+        min-height: 0; 
+        min-width: 0; 
+    }
+    
+    .listasalasexploracion .upper {
+        display: flex;
+        flex-wrap: wrap;
+        height: 100%;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .listasalasexploracion .cuadradobase{
+        display: grid;
+        grid-template-rows: auto auto;
+        align-content: center;
+        text-align: center;
+        justify-self: center;
+        width: 230px;
+        height:120px;
+        background:white;
+        border-radius: 20px 20px 20px 20px;
+        color: black;
+        cursor: pointer;
+        overflow: hidden;  /* NEW */
+        min-width: 0;      /* NEW; needed for Firefox */
+    }
+    
+    .listasalasexploracion .cuadrado{
+        width:auto;
+        width: 230px;
+        height:180px;
+        background:white;
+        border-radius: 20px 20px 20px 20px;
+        color: black;
+        cursor: pointer;
+    }
+    
+    .listasalasexploracion .cuadradoinv{
+        width:auto;
+        width: 230px;
+        height:180px;
+        background:white;
+        border-radius: 20px 20px 20px 20px;
+        color: black;
+        cursor: pointer;
+    }
+    
+    .listasalasexploracion .cuadrado p, .listasalasexploracion .cuadradoinv p{
+        margin: 10px 20px 10px 20px;
+        font-size: 14px;
+        text-align: justify;
+    }
+    
+    .listasalasexploracion .cuadradobase p{
+        font-size: 14px;
+    }
+    
+    #pinv{
+        direction: rtl;
+    }
+    
+    #cuadradoN{
+        background:black;
+        color: white;
+    }
+} 

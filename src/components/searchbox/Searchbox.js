@@ -8,7 +8,7 @@ function Searchbox({onChangeSearch}) {
     return(
         <div className="searchbox">
             <div></div>
-            <img src={icon_search}></img>
+            <img src={icon_search} alt=""></img>
             <input type="search" placeholder="Buscar" onChange={onChangeSearch}></input>
         </div>
     );

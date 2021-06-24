@@ -32,7 +32,7 @@ function Obra({creador, obra}){
                                     <div 
                                     className={styles.tipoTextoContainer}
                                     onClick={() => changeText(texto)}
-                                    id={texto.tipo == textSelectet ? styles.selected : void 0}>
+                                    id={texto.tipo === textSelectet ? styles.selected : void 0}>
                                         <p className={styles.tipoTexto}>{texto.tipo}</p>
                                     </div>
                                 )
@@ -52,12 +52,12 @@ function Obra({creador, obra}){
                     </div>
                 </div>
                 <div className={isImageSelected ? styles.obraFS : styles.obra}>
-                    <img src={obra.contenido.src} onClick={toFullScreen} ></img>
+                    <img src={obra.contenido.src} onClick={toFullScreen} alt="contenido"></img>
                 </div>
             </div> : 
                 <div className={isImageSelected ? styles.containerFS : styles.container}>
                     <div className={isImageSelected ? styles.obraFS : styles.obra}>
-                        <img id={styles.wider} src={obra.contenido.src} onClick={toFullScreen} ></img>
+                        <img id={styles.wider} src={obra.contenido.src} onClick={toFullScreen} alt="contenido"></img>
                     </div>
                     <div className={isImageSelected ? styles.informacionHiiden :  styles.informacion}>
                         <p id={styles.titulo}>{obra.contenido.titulo}</p>
@@ -70,7 +70,7 @@ function Obra({creador, obra}){
                                         <div 
                                         className={styles.tipoTextoContainer}
                                         onClick={() => changeText(texto)}
-                                        id={texto.tipo == textSelectet ? styles.selected : void 0}>
+                                        id={texto.tipo === textSelectet ? styles.selected : void 0}>
                                             <p className={styles.tipoTexto}>{texto.tipo}</p>
                                         </div>
                                     )

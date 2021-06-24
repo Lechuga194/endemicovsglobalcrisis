@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React from 'react'
 import Navbar from '../navbar/Navbar'
 import Obra from '../tipos_obra/Obra'
 import Investigacion from '../tipos_obra/Investigacion'
@@ -13,15 +13,17 @@ function Recorrido({goHome, goBack, onCreadorClick, onSalaClick, recorrido}){
     let obrasFiltradas = []
     recorrido.obras.forEach(item => {
         const creador = creadores.find(creador => {
-            return creador.id == item.id_creador;
+            return creador.id === item.id_creador;
         })
         const obra = obras.find(obra => {
-            return creador.id == item.id_creador && item.id_obra == obra.id_obra;
+            return creador.id === item.id_creador && item.id_obra === obra.id_obra;
         })
         obrasFiltradas.push([creador, obra]);
     })
 
     console.log(obrasFiltradas[0])
+
+    //TODO Si voy a implementar lo del color representativo iria aqui
 
     return(
         <div className={styles.container}>
@@ -31,7 +33,7 @@ function Recorrido({goHome, goBack, onCreadorClick, onSalaClick, recorrido}){
                     obrasFiltradas.map((obra, i) => {
                         return(
                             <div key={i}>
-                                {obra[0].rol == 'Artista' ?
+                                {obra[0].rol === 'Artista' ?
                                     <Obra creador={obra[0]} obra={obra[1]}/>
                                 :
                                     <Investigacion creador={obra[0]} obra={obra[1]}/>

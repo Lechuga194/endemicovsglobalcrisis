@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import Home from '../components/home/Home'
 import Exploracion from './exploracion/Exploracion'
 
@@ -11,7 +11,7 @@ function App() {
     const goHome = () => setCurrentPage('home')
 
     return(
-        currentPage == 'home' ? <Home onExploreClick={onExploreClick}/> : <Exploracion goHome={goHome}/>
+        currentPage === 'home' ? <Home onExploreClick={onExploreClick}/> : <Exploracion goHome={goHome}/>
     );
 }
 

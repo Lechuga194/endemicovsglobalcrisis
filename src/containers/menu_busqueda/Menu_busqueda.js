@@ -38,17 +38,17 @@ function Menu_busqueda({onCreadorClick, isSideMenu, changeCreador, onSalaClick})
         <div className={styles.busqueda}>
             <div className={styles.nav}>
                 <Searchbox onChangeSearch={onChangeSearch}/>
-                {currentPage == 'busqueda_nombres' ? 
+                {currentPage === 'busqueda_nombres' ? 
                     <a onClick={() => onButtonClick('busqueda_salas')}>Buscar por salas</a> : 
                     <a onClick={() => onButtonClick('busqueda_nombres')}>Buscar por nombre</a>
                 }
             </div>
-            <div className={styles.tiposbusqueda}> 
                 {currentPage == 'busqueda_nombres' ? 
                     <div className={styles.listacreadores}>
+
                         <div>
-                            <p className={styles.creador}>Artistas</p>
-                            <div> 
+                            <span className={styles.creador}>Artistas</span>
+                            <div className={styles.textbox} id={styles.scrollbar}> 
                                 <ul>
                                     {
                                         isSideMenu ? 
@@ -65,9 +65,10 @@ function Menu_busqueda({onCreadorClick, isSideMenu, changeCreador, onSalaClick})
                                 </ul>
                             </div>
                         </div>
+
                         <div>
                             <div>
-                            <p className={styles.creador}>Investigadores</p>
+                            <span className={styles.creador}>Investigadores</span>
                                 <ul>
                                     <li>
                                     {
@@ -91,7 +92,9 @@ function Menu_busqueda({onCreadorClick, isSideMenu, changeCreador, onSalaClick})
                                 </ul>
                             </div> */}
                         </div>
-                    </div> :
+
+                    </div> 
+                    :
                     <div className={styles.listasalas}>
                     {isSideMenu ? 
                         <div className={styles.listasalamenu}>
@@ -130,15 +133,14 @@ function Menu_busqueda({onCreadorClick, isSideMenu, changeCreador, onSalaClick})
                                     <p id={styles.detalles}>{salas[3].texto}</p>
                                 </div>
                             </div>
-                                <div className={styles.cuadradobase} onClick={() => cargaSala(salas[4])}>
-                                    <p>SALA 5</p>
-                                    <p id={styles.detalles}>{salas[4].texto}</p>
-                                </div>
+                            <div className={styles.cuadradobase} onClick={() => cargaSala(salas[4])}>
+                                <p>SALA 5</p>
+                                <p id={styles.detalles}>{salas[4].texto}</p>
+                            </div>
                     </div>}
                         </div>}
                         
             </div>
-        </div>
     );
 
 }

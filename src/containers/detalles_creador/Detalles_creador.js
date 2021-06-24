@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import { Carousel } from 'react-responsive-carousel';
 import Navbar from '../../containers/navbar/Navbar';
 import ShowMoreText from 'react-show-more-text';
@@ -22,16 +22,20 @@ function Detalles_creador({goHome, goBack, creador, onSalaClick}){
         setCurrentPage('obra')
     }
     const currentObras = obras.filter((obra, i) => {
-        return obra.id_creador == currentCreador.id;
+        return obra.id_creador === currentCreador.id;
     })
+    console.log("***************************************")
+    console.log(creador)
+    console.log(currentObras)
+    console.log("***************************************")
     const goBackDetalles = () => setCurrentPage('detalles_creador')
 
     return(
-        currentPage == 'detalles_creador' ? 
+        currentPage === 'detalles_creador' ? 
             <div className={styles.container}>
             <div><Navbar goHome={goHome} goBack={goBack} changeCreador={changeCreador} onSalaClick={onSalaClick}/></div>
             {
-                currentCreador.rol == 'Artista' ? 
+                currentCreador.rol === 'Artista' ? 
                     <div>
                         <div className={styles.datos}>
                             <h1>{currentCreador.nombre}</h1>
@@ -60,9 +64,12 @@ function Detalles_creador({goHome, goBack, creador, onSalaClick}){
                                     {
                                         currentObras.map((obra, i) => {
                                             return (
-                                                <div key={i} className={styles.elementofcarousel} onClick={() => onClickImage(obra)}>
-                                                    <img src={obra.contenido.src}/> 
-                                                </div>
+                                                obra.tipo === 'imagen' ? 
+                                                    <div key={i} className={styles.elementofcarousel} onClick={() => onClickImage(obra)}>
+                                                        <img src={obra.imagen.src} alt="contenido"/> 
+                                                    </div>
+                                                :
+                                                <iframe width="200" height="400" src={obra.video.src} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                             );
                                         })
                                     }
@@ -91,8 +98,8 @@ function Detalles_creador({goHome, goBack, creador, onSalaClick}){
                                     console.log(obra)
                                     return (
                                         <div key={i}>
-                                            <p id={styles.textotitulo}>{obra.contenido.titulo}</p>
-                                            <p id={styles.textocuerpo}>{obra.contenido.texto}</p>
+                                            <p id={styles.textotitulo}>{obra.titulo}</p>
+                                            <p id={styles.textocuerpo}>{obra.investigacion.texto}</p>
                                         </div>
                                     );
                                 })
