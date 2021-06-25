@@ -62,11 +62,20 @@
     margin: 20px;
 }
 
-.informacion .textos .cuerpoTextoContainter{
+.cuerpoTextoContainter{
     /* background-color: brown; */
     margin-top: 15px;
     text-align: justify;
 }
+
+.textboxArte{
+    padding: 1vw;
+    height:30vh;
+    width:auto;
+    border:none;
+    overflow:auto;
+}
+
 
 .obra{
     display: grid;
@@ -79,10 +88,6 @@
     height: 90vh;
     object-fit: scale-down;
     cursor: pointer;
-}
-
-.obra #wider{
-    width: 50vw;
 }
 
 .containerFS .obraFS img{
@@ -179,4 +184,83 @@
 	border-radius: 10px;
 	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
 	background-color: #D62929;
+}
+
+@media (max-width:750px){
+    .container{
+        grid-template-columns: auto;
+        grid-template-rows: 50% auto;
+        justify-items: center;
+    }
+
+    .informacion{
+        padding: 10px;
+    }
+    
+    .informacion #datos{
+        font-size: 14px;
+        font-weight: bolder;
+    }
+    
+    .informacion #tecnica{
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+
+    .opcionesTexto{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .opcionesTexto p{
+        margin: 12px;
+        font-size: 10px;
+        font-weight: bold;
+    }
+    
+    .textboxArte{
+        height:20vh;
+        max-height: 25vh;
+        width: 40vh;
+        margin-bottom: 10px;
+    }
+
+    .obra{
+        height: 30vh;
+        margin-top: 10px;
+    }
+    
+    .obra img{
+        margin-top: 15px;
+        height: 30vh;
+        object-fit: scale-down;
+        cursor: pointer;
+    }
+
+    .textos{
+        margin: 15px;
+    }
+
+    .textbox{
+        margin-top: 25px;
+        padding: 0vw;
+        height: 45vh;
+        width:auto;
+    }
+
+    .textos #textotitulo{
+        font-size: 20px;
+    }
+
+    .datos h1{
+        font-size: 24px;
+    }
+
+    .textboxbio{
+        margin-top: 50px;
+        height:80px;
+        width:95%;
+    }
+    
 }

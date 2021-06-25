@@ -8,7 +8,7 @@ function Investigacion({creadoryobra}){
     const obras = creadoryobra[1]
 
     return(
-        <div class={styles.container}>
+        <div class={styles.containerInv}>
             <div className={styles.datos}>
                 <h1>{creador.nombre}</h1>
                 <h3>{creador.pais}</h3>
@@ -32,7 +32,7 @@ function Investigacion({creadoryobra}){
                                     <div className={styles.textbox} id={styles.scrollbar}>
                                         <ShowMoreText
                                             id={styles.textocuerpo}
-                                            lines={9}
+                                            lines={18}
                                             more='Ver más...'
                                             less='Ver menos...'
                                             className={styles.componentevermas}

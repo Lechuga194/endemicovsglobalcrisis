@@ -1,36 +1,22 @@
 .container{
-    /* background-color: rgb(255, 6, 222); */
     display: grid;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: 60% 35%;
     height: 100vh;
 }
 
-.containerFS{
+.containerInv{
     display: grid;
     grid-template-columns: auto;
-    justify-items: center;
+    height: 100vh;
 }
 
 .informacion {
-    /* background-color: blue; */
     padding: 50px;
     display: grid;
     grid-template-rows: repeat(4, auto);
     align-items: start;
     align-content: start;
-    
 }
-
-.containerFS .informacionHiiden{
-    display: none;
-}
-
-.containerV{
-    display: grid;
-    grid-template-columns: 50% auto;
-    height: 100vh;
-}
-
 
 .informacion #titulo{
     /* background-color: rebeccapurple; */
@@ -51,18 +37,18 @@
     margin-bottom: 30px;
 }
 
-.informacion .textos .opcionesTexto{
+.opcionesTexto{
     /* background-color: gray; */
     display: flex;
     flex-wrap: wrap;
     justify-content: start;
 }
 
-.informacion .textos .opcionesTexto p{
+.opcionesTexto p{
     margin: 20px;
 }
 
-.informacion .textos .cuerpoTextoContainter{
+.cuerpoTextoContainter{
     /* background-color: brown; */
     margin-top: 15px;
     text-align: justify;
@@ -72,23 +58,21 @@
     display: grid;
     align-items: center;
     justify-items: center;
+    width: 100%;
+    overflow: hidden;  /* NEW */
+    min-width: 0;      /* NEW; needed for Firefox */
+    z-index: 1;
+    position: relative;
 }
 
 .obra img{
-    margin: 10px;
-    height: 90vh;
+    height: 80vh;
     object-fit: scale-down;
     cursor: pointer;
 }
 
 .obra #wider{
     width: 50vw;
-}
-
-.containerFS .obraFS img{
-    height: 95vh;
-    margin: 10px;
-    cursor: pointer;
 }
 
 
@@ -105,6 +89,7 @@
 .componentevermasancho a:hover { text-decoration: none; color:rgb(189, 22, 22); }
 .componentevermasancho a:focus { text-decoration: none; color:rgb(189, 22, 22); }
 .componentevermasancho a:active { text-decoration: none; color:rgb(189, 22, 22); }
+
 
 .datos{
     margin: 30px;
@@ -150,7 +135,15 @@
 .textbox{
     margin-top: 25px;
     padding: 1vw;
-    height:50vh;
+    height:40vh;
+    width:auto;
+    border:none;
+    overflow:auto;
+}
+
+.textboxArte{
+    padding: 1vw;
+    height:30vh;
     width:auto;
     border:none;
     overflow:auto;
@@ -170,7 +163,7 @@
 
 #scrollbar::-webkit-scrollbar
 {
-	width: 12px;
+	width: 5px;
 	background-color: #000000;
 }
 
@@ -179,4 +172,93 @@
 	border-radius: 10px;
 	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
 	background-color: #D62929;
+}
+
+.fullScreen{
+    margin: 10px;
+}
+
+.fullScreen img{
+    height: 100vh;
+    object-fit: scale-down;
+
+}
+
+
+@media (max-width:750px){
+    .container{
+        grid-template-columns: auto;
+        grid-template-rows: auto auto;
+        justify-items: center;
+    }
+
+    .informacion{
+        padding: 10px;
+    }
+    
+    .informacion #datos{
+        font-size: 14px;
+        font-weight: bolder;
+    }
+    
+    .informacion #tecnica{
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+
+    .opcionesTexto{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .opcionesTexto p{
+        margin: 12px;
+        font-size: 10px;
+        font-weight: bold;
+    }
+    
+    .textboxArte{
+        height:20vh;
+        max-height: 25vh;
+        width: 40vh;
+        margin-bottom: 10px;
+    }
+
+    .obra{
+        display: flex;
+        height: 75%;
+        width: 80%;
+    }
+
+    .elementofcarousel img{ 
+        object-fit: scale-down;
+        height: 350px;
+    }
+
+    .textos{
+        margin: 15px;
+    }
+
+    .textbox{
+        margin-top: 25px;
+        padding: 0vw;
+        height: 45vh;
+        width:auto;
+    }
+
+    .textos #textotitulo{
+        font-size: 20px;
+    }
+
+    .datos h1{
+        font-size: 24px;
+    }
+
+    .textboxbio{
+        margin-top: 50px;
+        height:80px;
+        width:95%;
+    }
+    
 }

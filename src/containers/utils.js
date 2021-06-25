@@ -86,7 +86,7 @@ const obras = [
         textos : [
             {
                 tipo: 'Descripción',
-                cuerpo: texto
+                cuerpo: textoExtremo
             },
             {
                 tipo: 'Semblanza',
@@ -98,7 +98,7 @@ const obras = [
             }
         ],
         imagen: {
-            src: 'https://images.unsplash.com/photo-1533591917057-a0b77b40de75?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8cHJpZGV8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
+            src: 'https://images.unsplash.com/photo-1561057160-ce83b1bd72f4?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80',
             tecnica: 'Tecnica1',
         },
     },
@@ -106,7 +106,7 @@ const obras = [
         id_obra : 2,
         id_creador: 1,
         tipo : 'imagen',
-        titulo : 'Titulo1',
+        titulo : 'Titulo2',
         textos : [
             {
                 tipo: 'Descripción',
@@ -114,7 +114,7 @@ const obras = [
             }
         ],
         imagen: {
-            src: 'https://images.unsplash.com/photo-1612040955893-6a995513b6a8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=938&q=80',
+            src: 'https://images.unsplash.com/photo-1594850598343-a5b0a83c237d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1404&q=80',
             tecnica: 'Tecnica1',
         },
     },
@@ -122,7 +122,7 @@ const obras = [
         id_obra : 3,
         id_creador: 1,
         tipo : 'imagen',
-        titulo : 'Titulo1',
+        titulo : 'Titulo3',
         textos : [
             {
                 tipo: 'Descripción',
@@ -138,7 +138,7 @@ const obras = [
         id_obra : 4,
         id_creador: 1,
         tipo : 'imagen',
-        titulo : 'Titulo1',
+        titulo : 'Titulo4',
         textos : [
             {
                 tipo: 'Descripción',
@@ -229,7 +229,7 @@ const salas = [
         id: 6,
         texto: 'RECORRIDO COMPLETO',
         creadores: [
-            1,2,54
+            1, 54, 2, 1, 54, 1
         ]
     },
 ]

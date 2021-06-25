@@ -106,7 +106,7 @@
     .exploracion{
         display: grid;
         grid-template-columns: auto;
-        grid-template-rows: auto auto;
+        grid-template-rows: 40% auto;
         height: auto;
         align-items: center;
         justify-items: center;
@@ -127,4 +127,17 @@
         row-gap: 10%;
     }
     
+}
+
+@media (max-width: 450px){
+
+    .contenido img {
+        height: 150px;
+        object-fit: scale-down;
+    }
+
+    .contenido {
+        row-gap: 0%;
+    }
+
 }

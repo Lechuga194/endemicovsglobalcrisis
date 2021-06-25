@@ -2,6 +2,7 @@
     display: grid;
     grid-template-rows: auto auto;
     margin: 5vh;
+    z-index: 2;
 }
 
 .nav{
