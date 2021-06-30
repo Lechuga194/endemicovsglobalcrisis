@@ -10,7 +10,7 @@ import {obras} from '../utils'
 function Recorrido({goHome, goBack, onCreadorClick, onSalaClick, recorrido}){
     const [creadoryobras, setCreadorYObras] = useState([])
     useEffect(() => {
-        fetch('http://localhost:3001/getCreadores')
+        fetch('https://endemicovsglobalcrisis.herokuapp.com/getCreadores')
             .then(data => data.json())
             .then(creadores => {
                 let creadoresFiltados = []

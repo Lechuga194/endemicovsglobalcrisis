@@ -10,6 +10,9 @@ function App() {
     const onExploreClick = () => setCurrentPage('exploracion');
     const goHome = () => setCurrentPage('home')
 
+    fetch('https://endemicovsglobalcrisis.herokuapp.com/wake')
+    .then(data => console.log("awake!"))
+
     return(
         currentPage === 'home' ? <Home onExploreClick={onExploreClick}/> : <Exploracion goHome={goHome}/>
     );

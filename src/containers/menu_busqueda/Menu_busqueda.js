@@ -14,7 +14,7 @@ function Menu_busqueda({onCreadorClick, isSideMenu, changeCreador, onSalaClick})
     const [creadores, setCreadores] = useState([]);
     
     useEffect(() => {
-        fetch('http://localhost:3001/getCreadores')
+        fetch('https://endemicovsglobalcrisis.herokuapp.com/getCreadores')
             .then(data => data.json())
             .then(creadores => {
                 setCreadores(creadores)
