@@ -64,19 +64,6 @@ const creadores = [
     },
 ]
 
-//POR SI RESULTA QUE TODOS LAS OBRAS TIENEN UN SOLO TEXTO
-// {
-//     id_obra : 2,
-//     id_creador: 1,
-//     tipo : 'imagen',
-//     titulo : 'Titulo1',
-//     texto: '',
-//     imagen: {
-//         src: 'https://images.unsplash.com/photo-1612040955893-6a995513b6a8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=938&q=80',
-//         tecnica: 'Tecnica1',
-//     },
-// },
-
 const obras = [
     {
         id_obra : 1,
