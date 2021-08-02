@@ -161,6 +161,10 @@
     overflow:auto;
 }
 
+.tipoTextoContainer{
+    cursor: pointer;
+}
+
 #scrollbar {
 	background: #000000;
 	overflow-y: scroll;

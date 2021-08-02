@@ -39,7 +39,7 @@ function Investigacion({creadoryobra}){
                                             anchorClass={styles.componentevermasancho}
                                             expanded={false}
                                             width={0}
-                                        >{obra.investigacion.texto}</ShowMoreText>
+                                        >{obra.textos[0]}</ShowMoreText>
                                     </div>
                                 </div>
                             );

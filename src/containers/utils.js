@@ -70,6 +70,8 @@ const obras = [
         id_creador: 1,
         tipo : 'imagen',
         titulo : 'Titulo1',
+        src: 'https://images.unsplash.com/photo-1561057160-ce83b1bd72f4?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80',
+        tecnica: 'Tecnica1',
         textos : [
             {
                 tipo: 'Descripción',
@@ -84,58 +86,48 @@ const obras = [
                 cuerpo: 'Hola! ' + texto
             }
         ],
-        imagen: {
-            src: 'https://images.unsplash.com/photo-1561057160-ce83b1bd72f4?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80',
-            tecnica: 'Tecnica1',
-        },
     },
     {
         id_obra : 2,
         id_creador: 1,
         tipo : 'imagen',
         titulo : 'Titulo2',
+        src: 'https://images.unsplash.com/photo-1594850598343-a5b0a83c237d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1404&q=80',
+        tecnica: 'Tecnica1',
         textos : [
             {
                 tipo: 'Descripción',
                 cuerpo: texto
             }
         ],
-        imagen: {
-            src: 'https://images.unsplash.com/photo-1594850598343-a5b0a83c237d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1404&q=80',
-            tecnica: 'Tecnica1',
-        },
     },
     {
         id_obra : 3,
         id_creador: 1,
         tipo : 'imagen',
         titulo : 'Titulo3',
+        src: 'https://images-na.ssl-images-amazon.com/images/I/81KWYrlOt7L._AC_SL1254_.jpg',
+        tecnica: 'Tecnica1',
         textos : [
             {
                 tipo: 'Descripción',
                 cuerpo: texto
             }
         ],
-        imagen: {
-            src: 'https://images-na.ssl-images-amazon.com/images/I/81KWYrlOt7L._AC_SL1254_.jpg',
-            tecnica: 'Tecnica1',
-        },
     },
     {
         id_obra : 4,
         id_creador: 1,
         tipo : 'imagen',
         titulo : 'Titulo4',
+        src: 'https://images.alphacoders.com/588/thumb-1920-588042.jpg',
+        tecnica: 'Tecnica1',
         textos : [
             {
                 tipo: 'Descripción',
                 cuerpo: texto
             }
         ],
-        imagen: {
-            src: 'https://images.alphacoders.com/588/thumb-1920-588042.jpg',
-            tecnica: 'Tecnica1',
-        },
     },
     {
         id_obra : 50,
@@ -186,7 +178,7 @@ const salas = [
         id: 1,
         texto: 'ANALISIS SEMÁNTICO DE "CRISIS" EXPLORACIÓN DEL CONCEPTO DESDE DISTINTAS DISCIPLINAS. MENCIONAN EL POTENCIAL DE CAMBIO EN LAS CRISIS',
         creadores: [
-            1,2
+            3, 3, 3
         ]
     },{
         id: 2,
@@ -221,7 +213,7 @@ const salas = [
     },
 ]
 
+const url = "http://localhost:3001"
 
 
-
-export {creadores, obras, salas}
+export {creadores, obras, salas, url}

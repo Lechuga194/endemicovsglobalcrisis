@@ -15,13 +15,15 @@ function ObraArtistica({creadoryobra}){
     const changeText = (text) => setTextSelected(text)
     const toFullScreen = () => setIsImageSelected(!isImageSelected)
 
+    console.log(creadoryobra)
+
     if(currentObra.tipo === 'imagen'){
         const img = new Image();
         img.onload = function() {
             let isWider = (this.width > this.height);
             setImageIsWider(isWider);
         }
-        img.src = obras[0].imagen.src;
+        img.src = currentObra.src;
     }
 
     const onChangeImage = (i) => {
@@ -30,12 +32,12 @@ function ObraArtistica({creadoryobra}){
     }
 
     return(
-        isImageSelected ? <div className={styles.fullScreen}><img onClick={toFullScreen} src={currentObra.imagen.src} className={styles.obra}></img></div> : 
+        isImageSelected ? <div className={styles.fullScreen}><img onClick={toFullScreen} src={currentObra.src} className={styles.obra}></img></div> : 
         <div className={styles.container}>
             <div className={styles.informacion}>
                 <p id={styles.titulo}>{currentObra.titulo}</p>
                 <p id={styles.datos}>{creador.nombre} / {creador.pais}</p>
-                <p id={styles.tecnica}>{currentObra.tipo === 'imagen' ? currentObra.imagen.tecnica : currentObra.video.tecnica}</p>
+                <p id={styles.tecnica}>{currentObra.tipo === 'imagen' ? currentObra.tecnica : currentObra.tecnica}</p>
                 <div className={styles.textos}>
                     <div className={styles.opcionesTexto}>
                         {
@@ -44,7 +46,7 @@ function ObraArtistica({creadoryobra}){
                                 className={styles.tipoTextoContainer}
                                 onClick={() => changeText(texto)}
                                 id={texto.tipo === textSelectet ? styles.selected : void 0}>
-                                    <p className={styles.tipoTexto}>{texto.tipo}</p>
+                                    <p className={styles.tipoTexto}>{texto[0]}</p>
                                 </div>
                             )
                         }
@@ -59,7 +61,7 @@ function ObraArtistica({creadoryobra}){
                                 anchorClass={styles.componentevermasancho}
                                 expanded={false}
                                 width={0}
-                            >{textSelectet.cuerpo}</ShowMoreText>
+                            >{textSelectet[1]}</ShowMoreText>
                         </div>
                     </div>
                 </div>
@@ -69,6 +71,7 @@ function ObraArtistica({creadoryobra}){
                     emulateTouch
                     infiniteLoop
                     showThumbs={false}
+                    stopOnHover
                     swipeable
                     useKeyboardArrows
                     onChange={onChangeImage}
@@ -79,7 +82,7 @@ function ObraArtistica({creadoryobra}){
                             return (
                                 obra.tipo === 'imagen' ? 
                                     <div key={i} className={styles.elementofcarousel}>
-                                        <img src={obra.imagen.src} alt="contenido"/> 
+                                        <img src={obra.src} alt="contenido"/> 
                                     </div>
                                 :
                                 <iframe src={obra.video.src} title="YouTube video player" width="560" height="315" 

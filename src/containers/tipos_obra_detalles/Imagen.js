@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import styles from './obra.module.css'
 import ShowMoreText from 'react-show-more-text';
 
@@ -16,14 +16,19 @@ function Imagen({creador, obra}){
         let isWider = (this.width > this.height);
         setImageIsWider(isWider);
     }
-    img.src = obra.imagen.src;
+    img.src = obra.src;
+
+    useEffect(() => {
+        console.log(creador);
+        console.log(obra, "***************")
+    }, [])
 
     return(
         <div className={isImageSelected ? styles.containerFS : styles.container}>
             <div className={isImageSelected ? styles.informacionHiiden :  styles.informacion}>
                 <p id={styles.titulo}>{obra.titulo}</p>
                 <p id={styles.datos}>{creador.nombre} / {creador.pais}</p>
-                <p id={styles.tecnica}>{obra.imagen.tecnica}</p>
+                <p id={styles.tecnica}>{obra.tecnica}</p>
                 <div className={styles.textos}>
                     <div className={styles.opcionesTexto}>
                         {
@@ -31,8 +36,8 @@ function Imagen({creador, obra}){
                                 <div 
                                 className={styles.tipoTextoContainer}
                                 onClick={() => changeText(texto)}
-                                id={texto.tipo === textSelectet ? styles.selected : void 0}>
-                                    <p className={styles.tipoTexto}>{texto.tipo}</p>
+                                id={texto[0] === textSelectet ? styles.selected : void 0}>
+                                    <p className={styles.tipoTexto}>{texto[0]}</p>
                                 </div>
                             )
                         }
@@ -47,13 +52,13 @@ function Imagen({creador, obra}){
                                 anchorClass={styles.componentevermasancho}
                                 expanded={false}
                                 width={0}
-                            >{textSelectet.cuerpo}</ShowMoreText>
+                            >{textSelectet[1]}</ShowMoreText>
                         </div>
                     </div>
                 </div>
             </div>
             <div className={isImageSelected ? styles.obraFS : styles.obra}>
-                <img src={obra.imagen.src} onClick={toFullScreen} alt="contenido"></img>
+                <img src={obra.src} onClick={toFullScreen} alt="contenido"></img>
             </div>
         </div>
     );
