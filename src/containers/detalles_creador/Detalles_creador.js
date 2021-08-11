@@ -79,7 +79,7 @@ function Detalles_creador({goHome, goBack, creador, onSalaClick}){
                                                         <img src={obra.src} alt="contenido"/> 
                                                     </div>
                                                 :
-                                                <iframe width="200" height="400" src={obra.video.src} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                                <iframe width="200" height="400" src={obra.src} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                             );
                                         })
                                     }

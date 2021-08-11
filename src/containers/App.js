@@ -10,10 +10,6 @@ function App() {
     const onExploreClick = () => setCurrentPage('exploracion');
     const goHome = () => setCurrentPage('home')
 
-    //TODO Borrar cuando se despligue en C3
-    // fetch('https://endemicovsglobalcrisis.herokuapp.com/wake')
-    // .then(data => console.log("awake!"))
-
     return(
         currentPage === 'home' ? <Home onExploreClick={onExploreClick}/> : <Exploracion goHome={goHome}/>
     );

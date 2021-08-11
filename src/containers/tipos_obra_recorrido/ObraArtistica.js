@@ -85,9 +85,7 @@ function ObraArtistica({creadoryobra}){
                                         <img src={obra.src} alt="contenido"/> 
                                     </div>
                                 :
-                                <iframe src={obra.video.src} title="YouTube video player" width="560" height="315" 
-                                    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope;" allowfullscreen="1">
-                                </iframe> //TODO Reparar video
+                                <iframe width="200" height="400" src={obra.src} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                             );
                         })
                     }
